@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
+    <!-- <link href="/dist/output.css" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://kit.fontawesome.com/b3f15bab34.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="src/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <title>Portfolio</title>
@@ -17,7 +18,7 @@
 <body class="bg-[#21351B]">
     <header class="flex" id="home">
         <div class="sm:flex-initial sm:w-[45%] flex justify-between uppercase text-[#00F60A] font-medium ml-9 my-4">
-            <img class="w-32 sm:w-48" src="images/logo.png" alt="">
+            <img class="w-32 sm:w-48" src="src/images/logo.png" alt="">
             <i class="fa fa-bars  sm:hidden" aria-hidden="true"></i>
         </div>
         <div class="hidden sm:flex flex-1 justify-between items-center text-white font-medium my-4 mr-28">
@@ -41,10 +42,10 @@
                 </p>
             </div>
             <div class="hidden relative md:block">
-                <img class="rounded-full w-72 mr-28 border-[6px] border-[#C7FFC9]" src="images/profile.jpg" alt="">
-                <img class="absolute bottom-10 left-0 w-28 rotate-2" src="images/try.png" alt="">
+                <img class="rounded-full w-72 mr-28 border-[6px] border-[#C7FFC9]" src="src/images/profile.jpg" alt="">
+                <img class="absolute bottom-10 left-0 w-28 rotate-2" src="src/images/try.png" alt="">
                 <button class="absolute bottom-1 -left-[80px] bg-[#C7FFC9] py-4 px-6 text-black font-medium transform -rotate-45" >Contact Me</button>
-                <img class="w-12 h-12 rounded-full" src="images/laptop.png" alt="">
+                <img class="w-12 h-12 rounded-full" src="src/images/laptop.png" alt="">
             </div>
         </div>
     </section>
@@ -55,42 +56,42 @@
         </div>
         <div class="flex mx-4 md:mx-16 lg:mx-44 my-5 justify-between">
             <div>
-                <img class="html-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="images/html.png" alt="">
+                <img class="html-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="src/images/html.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">HTML</p>
             </div>
             <div>
-                <img class="css-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="images/css.png" alt="">
+                <img class="css-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="src/images/css.png" alt="">
                 <p class=" text-center text-2xl md:text-4xl lg:text-5xl mt-2">CSS</p>
             </div>
             <div>
-                <img class="javascript-logo w-[69px] sm:w-20 lg:w-32 xl:w-40 2xl:w-44 mx-auto" src="images/javascript.png" alt="">
+                <img class="javascript-logo w-[69px] sm:w-20 lg:w-32 xl:w-40 2xl:w-44 mx-auto" src="src/images/javascript.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">JAVASCRIPT</p>
             </div>
             <div>
-                <img class="php-logo w-36 sm:w-40 lg:w-64 xl:w-80 2xl:w-80 mx-auto" src="images/php.png" alt="">
+                <img class="php-logo w-36 sm:w-40 lg:w-64 xl:w-80 2xl:w-80 mx-auto" src="src/images/php.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">PHP</p>
             </div>
         </div>
 
         <div class="flex mx-4 md:mx-16 lg:mx-44 mt-7 pb-12 justify-between items-center">
             <div>
-                <img class="git-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="images/git.png" alt="">
+                <img class="git-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="src/images/git.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">GIT</p>
             </div>
             <div>
-                <img class="github-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="images/github.png" alt="">
+                <img class="github-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="src/images/github.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">GITHUB</p>
             </div>
             <div class>
-                <img class="laravel-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="images/laravel.png" alt="">
+                <img class="laravel-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="src/images/laravel.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">LARAVEL</p>
             </div>
             <div>
-                <img class="tailwind-logo w-24 sm:w-32 lg:w-52 xl:w-60 2xl:w-60 mx-auto" src="images/tailwind.png" alt="">
+                <img class="tailwind-logo w-24 sm:w-32 lg:w-52 xl:w-60 2xl:w-60 mx-auto" src="src/images/tailwind.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">TAILWIND</p>
             </div>
             <div>
-                <img class="bootstrap-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="images/bootstrap.png" alt="">
+                <img class="bootstrap-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="src/images/bootstrap.png" alt="">
                 <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">BOOTSTRAP</p>
             </div>
         </div>
@@ -105,11 +106,11 @@
         <div class="sm:flex mx-8 lg:mx-32 sm:py-16 mb-14 sm:text-2xl lg:text-3xl">
             <div>
                 <p>Barangay Profiling and Record Keeping System</p>
-                <img src="images/project1.png" class="sm:w-[90%] sm:h-[110%]" alt="">
+                <img src="src/images/project1.png" class="sm:w-[90%] sm:h-[110%]" alt="">
             </div>
             <div class="pt-5 sm:pt-0">
                 <p>SansLechon - Eccomerce Website with Affiliate System</p>
-                <img src="images/project2.png" class="sm:w-[90%] sm:h-[110%]" alt="">
+                <img src="src/images/project2.png" class="sm:w-[90%] sm:h-[110%]" alt="">
             </div>
         </div>
     </section>
@@ -128,10 +129,10 @@
                 </p>
                 <div class="flex">
              
-                    <a href="https://www.facebook.com/karl.cabalquinto"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="images/facebook.png" alt=""></a>
-                    <a href="https://mail.google.com"> <img class="w-7 sm:w-9 md:w-11 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="images/gmail3.png" alt=""></a>
-                    <a href="https://www.linkedin.com/in/karl-cabalquinto-21439929a/"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="images/linkedIn.png" alt=""></a>
-                    <a href="https://github.com/pingpongrammer"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="images/github.png" alt=""></a>
+                    <a href="https://www.facebook.com/karl.cabalquinto"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="src/images/facebook.png" alt=""></a>
+                    <a href="https://mail.google.com"> <img class="w-7 sm:w-9 md:w-11 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="src/images/gmail3.png" alt=""></a>
+                    <a href="https://www.linkedin.com/in/karl-cabalquinto-21439929a/"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="src/images/linkedIn.png" alt=""></a>
+                    <a href="https://github.com/pingpongrammer"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="src/images/github.png" alt=""></a>
             
                 </div>  
             </div>
