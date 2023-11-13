@@ -1,0 +1,60 @@
+
+@media screen and (max-width: 520px) {
+    .html-logo{
+        width: 60px;
+    }
+    .css-logo{
+        width: 60px;
+    }
+    .javascript-logo{
+        width: 50px;
+    }
+    .php-logo{
+        width: 96px;
+    }
+    .git-logo{
+        width: 50px;
+    }
+    .github-logo{
+        width: 50px;
+    }
+    .laravel-logo{
+        width: 50px;
+    }
+    .tailwind-logo{
+        width: 80px;
+    }
+    .bootstrap-logo{
+        width: 50px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .html-logo{
+        width: 50px;
+    }
+    .css-logo{
+        width: 50px;
+    }
+    .javascript-logo{
+        width: 44px;
+    }
+    .php-logo{
+        width: 86px;
+    }
+    .git-logo{
+        width: 35px;
+    }
+    .github-logo{
+        width: 35px;
+    }
+    .laravel-logo{
+        width: 34px;
+    }
+    .tailwind-logo{
+        width: 59px;
+    }
+    .bootstrap-logo{
+        width: 35px;
+    }
+  }
