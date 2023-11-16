@@ -58,3 +58,16 @@
         width: 35px;
     }
   }
+  section .html-logo{
+    transition: 1s;
+  }
+
+
+  .skill {
+    transform: translateX(-100%);
+  }
+
+  .skill.show-animate {
+    transform: translateX(0);
+    transition: 1s;
+  }

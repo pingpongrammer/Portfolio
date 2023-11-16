@@ -5,5 +5,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  purge: ["./**/*.{html,js,css}"],
 }

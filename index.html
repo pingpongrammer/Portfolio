@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://kit.fontawesome.com/b3f15bab34.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,62 +15,71 @@
     <title>Portfolio</title>
 </head>
 <body class="bg-[#21351B]">
-    <header class="flex" id="home">
-        <div class="sm:flex-initial sm:w-[45%] flex justify-between uppercase text-[#00F60A] font-medium ml-9 my-4">
-            <img class="w-32 sm:w-48" src="images/logo.png" alt="">
-            <i class="fa fa-bars  sm:hidden" aria-hidden="true"></i>
-        </div>
-        <div class="hidden sm:flex flex-1 justify-between items-center text-white font-medium my-4 mr-28">
-            <button onclick="scrollToSection('home')"  class=" hover:text-[#00F60A]" href="">Home</button>
-            <button onclick="scrollToSection('skill')" class=" hover:text-[#00F60A]" href="">Skill</button>
-            <button onclick="scrollToSection('project')" class=" hover:text-[#00F60A]" href="">Project</button>
-            <button onclick="scrollToSection('contact')" class=" hover:text-[#00F60A]" href="">Contact</button>
-        </div>
-    </header>
+    <div class="fixed top-0 right-0 left-0 bg-[#21351B] z-10">
+        <header class="sm:flex ">
+            <div class="sm:flex-initial sm:w-[35%] md:w-[45%] flex justify-between uppercase text-[#00F60A] font-medium sm:ml-9 my-4 mx-7">
+                <img class="w-40 sm:w-48 " src="images/logo.png" alt="">
+                <div class="sm:hidden ">
+                    <i class="fa fa-bars" aria-hidden="true "></i>
+                </div>
+            </div>
+    
+            <div class="hidden sm:flex flex-1 justify-between items-center text-white font-medium my-4 mr-28">
+                <button onclick="scrollToSection('home')"  class=" hover:text-[#00F60A]" href="">Home</button>
+                <button onclick="scrollToSection('skill')" class=" hover:text-[#00F60A]" href="">Skill</button>
+                <button onclick="scrollToSection('project')" class=" hover:text-[#00F60A]" href="">Project</button>
+                <button onclick="scrollToSection('contact')" class=" hover:text-[#00F60A]" href="">Contact</button>
+            </div>
+        </header>
 
-    <section class="home mt-16 mb-28" >
-        <div class="sm:flex sm:mx-24 mx-6 text-white justify-between">
-            <div class="md:w-2/5">
-                <h1 class=" text-[#00F60A] text-4xl sm:text-7xl font-bold"><span class="text-white">I'm </span>Karl</h1>
-                <h3 class="text-xl sm:text-4xl  font-bold">Aspiring Web Developer</h3>
-                <p class="pt-3">As an aspiring web developer, I am passionately honing my skills in various programming languages, 
+    </div>
+
+
+    <section class="home pt-32 pb-32" id="home" >
+        <div class="sm:flex md:ml-24 sm:ml-6 mx-6 text-white">
+            <div class="sm:w-[50%]">
+                <h1 class=" text-[#00F60A] text-5xl sm:text-7xl font-bold"><span class="text-white">I'm </span>Karl</h1>
+                <h3 class="text-xl sm:text-2xl xl:text-4xl font-bold">Aspiring Web Developer</h3>
+                <p class="pt-3 text-sm lg:text-lg  xl:text-2xl">As an aspiring web developer, I am passionately honing my skills in various programming languages, 
                     frameworks, and design principles. I am on a continuous learning journey, exploring innovative technologies 
                     to create engaging and user-friendly websites. Currently seeking opportunities, I am eager to apply my 
                     knowledge and contribute to dynamic projects, bringing creativity and a solutions-oriented mindset to 
                     the ever-evolving landscape of web development.
                 </p>
             </div>
-            <div class="hidden relative md:block">
-                <img class="rounded-full w-72 mr-28 border-[6px] border-[#C7FFC9]" src="images/profile.jpg" alt="">
-                <img class="absolute bottom-10 left-0 w-28 rotate-2" src="images/try.png" alt="">
-                <button class="absolute bottom-1 -left-[80px] bg-[#C7FFC9] py-4 px-6 text-black font-medium transform -rotate-45" >Contact Me</button>
-                <img class="w-12 h-12 rounded-full" src="images/laptop.png" alt="">
+            <div class="hidden sm:block flex-1">
+                <!-- <img class="rounded-full w-72 mr-28 border-[6px] border-[#C7FFC9]" src="images/profile.jpg" alt=""> -->
+                <img class="w-4/6 mx-auto animate-bounce" src="images/logo2.png" alt="">
+                <!-- <button class="absolute bottom-1 -left-[80px] bg-[#C7FFC9] py-4 px-6 text-black font-medium transform -rotate-45" >Contact Me</button> -->
+                <!-- <i class="fa fa-arrow-circle-down text-5xl animate-bounce" aria-hidden="true"></i> -->
             </div>
         </div>
     </section>
 
-    <section id="skill" class="skill bg-[#C7FFC9] text-black font-[Jomhuria] mt-16">
-        <div class="title pt-8">
-            <h1 class="text-center text-4xl sm:text-7xl uppercase" >Technical Skills</h1>
+    <section id="skill" class=" bg-[#C7FFC9] text-black font-[Jomhuria] ">
+        <div class="title pt-16">
+            <h1 class="text-center text-5xl sm:text-7xl uppercase" >Technical Skills</h1>
         </div>
-        <div class="flex mx-4 md:mx-16 lg:mx-44 my-5 justify-between">
+           <div class="skill show-animate">
+                <div class="flex mx-4 md:mx-16 lg:mx-44 my-5 justify-between">
+                    <div>
+                        <img class="html-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto " src="images/html.png" alt="">
+                        <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">HTML</p>
+                    </div>
+                    <div>
+                        <img class="css-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="images/css.png" alt="">
+                        <p class=" text-center text-2xl md:text-4xl lg:text-5xl mt-2">CSS</p>
+                    </div>
+                    <div>
+                        <img class="javascript-logo w-[69px] sm:w-20 lg:w-32 xl:w-40 2xl:w-44 mx-auto" src="images/JavaScript.png" alt="">
+                        <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">JAVASCRIPT</p>
+                    </div>
+                    <div>
+                        <img class="php-logo w-36 sm:w-40 lg:w-64 xl:w-80 2xl:w-80 mx-auto" src="images/php.png" alt="">
+                        <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">PHP</p>
+                    </div>
+                </div>
             <div>
-                <img class="html-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="images/html.png" alt="">
-                <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">HTML</p>
-            </div>
-            <div>
-                <img class="css-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="images/css.png" alt="">
-                <p class=" text-center text-2xl md:text-4xl lg:text-5xl mt-2">CSS</p>
-            </div>
-            <div>
-                <img class="javascript-logo w-[69px] sm:w-20 lg:w-32 xl:w-40 2xl:w-44 mx-auto" src="images/JavaScript.png" alt="">
-                <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">JAVASCRIPT</p>
-            </div>
-            <div>
-                <img class="php-logo w-36 sm:w-40 lg:w-64 xl:w-80 2xl:w-80 mx-auto" src="images/php.png" alt="">
-                <p class="text-center text-2xl md:text-4xl lg:text-5xl mt-2">PHP</p>
-            </div>
-        </div>
 
         <div class="flex mx-4 md:mx-16 lg:mx-44 mt-7 pb-12 justify-between items-center">
             <div>
@@ -100,17 +108,17 @@
 
     <section class="project font-[Jomhuria] text-white" id="project">
         <div class="title pt-8">
-            <h1 class="text-center text-7xl uppercase">Projects</h1>
+            <h1 class="text-center text-5xl sm:text-7xl uppercase">Projects</h1>
         </div>
 
         <div class="sm:flex mx-8 lg:mx-32 sm:py-16 mb-14 sm:text-2xl lg:text-3xl">
-            <div>
+            <div class="hover:scale-110 duration-300 cursor-pointer">
                 <p>Barangay Profiling and Record Keeping System</p>
-                <img src="images/project1.png" class="sm:w-[90%] sm:h-[110%]" alt="">
+                <img src="images/project1.png" class="sm:w-[90%] sm:h-[110%] " alt="">
             </div>
-            <div class="pt-5 sm:pt-0">
+            <div class="hover:scale-110 duration-300 cursor-pointer">
                 <p>SansLechon - Eccomerce Website with Affiliate System</p>
-                <img src="images/project2.png" class="sm:w-[90%] sm:h-[110%]" alt="">
+                <img src="images/project2.png" class="sm:w-[90%] sm:h-[110%] " alt="">
             </div>
         </div>
     </section>
@@ -118,7 +126,7 @@
     
     <section class="contact bg-[#C7FFC9] font-[Jomhuria] text-black" id="contact">
         <div class="title pt-8">
-            <h1 class="text-center text-7xl uppercase">Contact Me</h1>
+            <h1 class="text-center text-5xl sm:text-7xl uppercase">Contact Me</h1>
         </div>
 
         <div class="sm:flex mx-8 lg:mx-40 sm:py-10 py-4">
@@ -140,7 +148,7 @@
                 <input class="w-full my-2 py-1 px-3 text-2xl rounded-md" type="text" placeholder="Your Name">
                 <input class="w-full my-2 py-1 px-3 text-2xl rounded-md" type="text" placeholder="Your Email">
                 <textarea class=" my-2 w-full py-1 px-3 text-2xl rounded-md" name="" id=""  rows="5" placeholder="Your Message"></textarea>
-                <button class="block mx-auto bg-green-500 px-8 text-3xl hover:bg-green-700 rounded-md">Send</button>
+                <button class="block mx-auto bg-green-500 px-8 text-3xl hover:bg-green-700 rounded-md hover:scale-110 duration-300 ">Send</button>
             </div>
         </div>
     </section>
@@ -159,5 +167,24 @@
         }
       </script> 
 
+<script>
+let sections = document.querySelectorAll('.skill');
+window.onscroll = () => {
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let id = sec.getAttribute('id');
+    let targetElement = document.getElementById(id);
+    let offset = targetElement.offsetTop + 150;
+    let height = targetElement.offsetHeight;
+
+    if (top >= offset && top < offset + height) {
+      targetElement.classList.add('show-animate');
+    } else {
+      targetElement.classList.remove('show-animate');
+    }
+  });
+};
+
+  </script>
 </body>
 </html>
