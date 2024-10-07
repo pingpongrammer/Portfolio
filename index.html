@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="https://cdn.tailwindcss-animated.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Karl Cabalquinto</title>
+    <style>
+            @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
 
-    <title>Portfolio</title>
+        .animate-wiggle:hover {
+            animation: wiggle 0.5s infinite;
+        }
+    </style>
 </head>
 <body class="bg-[#21351B] font-popp">
 
@@ -32,86 +45,80 @@
 
         </div>
 
-
-        <section class="home relative" id="home" >
-            <div class="mob-info sm:flex lg:ml-16 sm:ml-6 px-6 md:px-12 text-white relative pt-16 pb-32">
-                <div class=" sm:w-[60%]  relative z-20">
-
-                    <p>Hello, My name is</p>
-                    <p class="name text-4xl md:text-5xl font-bold">Karl Cabalquinto</p>
-                    <p class="aspiring text-xl md:text-2xl font-bold text-[#00F60A]">Aspiring Web Developer</p>
-                    <p class="info pt-3 sm:text-xs md:text-[18px] lg:text-lg  xl:text-xl">As an aspiring web developer, I am passionately honing my skills in various programming languages, 
-                        frameworks, and design principles. I am on a continuous learning journey, exploring innovative technologies 
-                        to create engaging and user-friendly websites. Currently seeking opportunities, I am eager to apply my 
-                        knowledge and contribute to dynamic projects, bringing creativity and a solutions-oriented mindset to 
+        <section class="home relative" id="home">
+            <div class="mob-info sm:flex mx-4 sm:mx-8 md:mx-24 2xl:mx-40 text-white  relative pt-16 pb-32 fade-right animate-once">
+                <div class="sm:w-[65%] relative z-20 pr-8">
+                    <p class="2xl:text-xl">Hello, My name is</p>
+                    <p class="name text-4xl md:text-5xl 2xl:text-7xl font-bold">Karl Cabalquinto</p>
+                    <p class="aspiring text-xl md:text-2xl font-bold text-[#00F60A] 2xl:text-4xl">Aspiring Web Developer</p>
+                    <p class="info pt-3 sm:text-xs md:text-[18px] lg:text-lg xl:text-xl">
+                        As an aspiring web developer, I am passionately honing my skills in various programming languages,
+                        frameworks, and design principles. I am on a continuous learning journey, exploring innovative technologies
+                        to create engaging and user-friendly websites. Currently seeking opportunities, I am eager to apply my
+                        knowledge and contribute to dynamic projects, bringing creativity and a solutions-oriented mindset to
                         the ever-evolving landscape of web development.
                     </p>
-
                 </div>
-                <div class="sm:hidden absolute -top-10 z-10">
-                    <img class="profile" src="./images/profile1.png" alt="">
-                </div>
-                <div class=" sm:hidden absolute  right-0 left-0 bottom-0 z-0">
-                    <img class=" w-[650px]" src="./images/rectangle8.png" alt="">
+                <div class="flex justify-center rounded-full w-[380px] h-[380px] bg-[#C7FFC9] overflow-hidden ">
+                    <img class="w-5/6 object-contain" src="./images/profile2.png" alt="Profile Image">
                 </div>
             </div>
-            <div class="hidden sm:block flex-1 absolute right-0 bottom-0 z-10">
-                <img class=" w-[550px] md:w-[650px] mx-auto " src="./images/rectangle4.png" alt="">
-            </div>
-            <div class=" hidden sm:block flex-1 absolute  right-0 lg:right-16 bottom-0 z-10">
-                <img class=" w-[300px] md:w-[350px] mx-auto " src="./images/profile2.png" alt="">
-            </div>
-
-
         </section>
+        
  
-    <section id="skill" class=" bg-[#C7FFC9] text-black z-10">
-        <div class="title pt-6 sm:pt-14">
+    <section id="skill" class=" bg-[#C7FFC9] text-black z-10 py-6 sm:py-14">
+        <div class="title mb-8">
             <h1 class="text-center text-xl sm:text-4xl font-extrabold uppercase" >Technical Skills</h1>
         </div>
-           <div class="skill show-animate text-xs sm:text-xl">
-                <div class="flex mx-4 md:mx-16 lg:mx-24 my-10 justify-between">
-                    <div>
-                        <img class="html-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto " src="./images/html.png" alt="">
-                        <p class="text-center font-semibold mt-2 ">HTML</p>
-                    </div>
-                    <div>
-                        <img class="css-logo w-20 sm:w-24 lg:w-36 xl:w-44 2xl:w-48 mx-auto" src="./images/css.png" alt="">
-                        <p class=" text-center font-semibold mt-2">CSS</p>
-                    </div>
-                    <div>
-                        <img class="javascript-logo w-[69px] sm:w-20 lg:w-32 xl:w-40 2xl:w-44 mx-auto" src="./images/JavaScript.png" alt="">
-                        <p class="text-center font-semibold mt-2">JAVASCRIPT</p>
-                    </div>
-                    <div>
-                        <img class="php-logo w-36 sm:w-40 lg:w-64 xl:w-80 2xl:w-80 mx-auto" src="./images/php.png" alt="">
-                        <p class="text-center font-semibold mt-2">PHP</p>
-                    </div>
-                </div>
-            <div>
 
-        <div class="flex mx-4 md:mx-16 lg:mx-24 mt-7 pb-12 justify-between items-center">
-            <div>
-                <img class="git-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="./images/git.png" alt="">
-                <p class="text-center font-semibold mt-2">GIT</p>
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 mx-4 sm:mx-8 md:mx-24 2xl:mx-40 fade-right animate-once">
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/html.png" alt="HTML">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">HTML</p>
+                </div>
+                
+                
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/css.png" alt="Cssa">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">CSS</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-[45%] object-contain" src="./images/JavaScript.png" alt="Javascript">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">JavaScript</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-4/6 object-contain" src="./images/php.png" alt="Php">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Php</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/git.png" alt="Git">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Git</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/github.png" alt="Github">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Github</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/laravel.png" alt="Laravel">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Laravel</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-4/6 object-contain" src="./images/tailwind.png" alt="Tailwind">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Tailwind</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/livewire.png" alt="Livewire">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Livewire</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-4/6 object-contain" src="./images/alpine.png" alt="Alpine">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Alpine</p>
+                </div>
+                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/bootstrap.png" alt="Alpine">
+                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Bootstrap</p>
+                </div>
             </div>
-            <div>
-                <img class="github-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="./images/github.png" alt="">
-                <p class="text-center font-semibold mt-2">GITHUB</p>
-            </div>
-            <div class>
-                <img class="laravel-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="./images/laravel.png" alt="">
-                <p class="text-center font-semibold mt-2">LARAVEL</p>
-            </div>
-            <div>
-                <img class="tailwind-logo w-24 sm:w-32 lg:w-52 xl:w-60 2xl:w-60 mx-auto" src="./images/tailwind.png" alt="">
-                <p class="text-center font-semibold mt-2">TAILWIND</p>
-            </div>
-            <div>
-                <img class="bootstrap-logo w-14 sm:w-20 lg:w-32 xl:w-36 2xl:w-40 mx-auto" src="./images/bootstrap.png" alt="">
-                <p class="text-center font-semibold mt-2">BOOTSTRAP</p>
-            </div>
-        </div>
         
     </section>
 
@@ -120,7 +127,7 @@
             <h1 class="text-center text-2xl sm:text-4xl font-extrabold uppercase">Projects</h1>
         </div>
 
-        <div class="sm:flex mx-8 lg:mx-20 sm:py-14 mb-28 ">
+        <div class="sm:flex mx-4 sm:mx-8 md:mx-24 2xl:mx-40 sm:py-14 mb-28 ">
             <div class="hover:scale-110 duration-300 cursor-pointer sm:mr-8 xl:mr-12 pt-2">
                 <p class=" xl:text-lg sm:text-md text-xs font-semibold mt-2">Barangay Profiling and Record Keeping System</p>
                 <img src="./images/project1.png" class=" sm:h-[110%] " alt="">
@@ -168,32 +175,12 @@
     </footer>
 
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function scrollToSection(sectionId) {
-          $('html, body').animate({
-            scrollTop: $('#' + sectionId).offset().top
-          }, 500); // Adjust the speed as needed
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
         }
-      </script> 
-
-<script>
-let sections = document.querySelectorAll('.skill');
-window.onscroll = () => {
-  sections.forEach(sec => {
-    let top = window.scrollY;
-    let id = sec.getAttribute('id');
-    let targetElement = document.getElementById(id);
-    let offset = targetElement.offsetTop + 150;
-    let height = targetElement.offsetHeight;
-
-    if (top >= offset && top < offset + height) {
-      targetElement.classList.add('show-animate');
-    } else {
-      targetElement.classList.remove('show-animate');
-    }
-  });
-};
-
-  </script>
+    </script>
 </body>
 </html>
