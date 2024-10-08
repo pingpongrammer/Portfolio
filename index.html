@@ -22,40 +22,59 @@
         .animate-wiggle:hover {
             animation: wiggle 0.5s infinite;
         }
+
+        #typingName {
+            border-right: 2px solid white;
+            width: fit-content;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes blinkCursor {
+            0% { border-right-color: white; }
+            50% { border-right-color: transparent; }
+            100% { border-right-color: white; }
+        }
+
+        #typingName {
+            animation: blinkCursor 0.75s steps(1) infinite;
+        }
     </style>
 </head>
-<body class="bg-[#21351B] font-popp">
+<body class="bg-gradient-to-r from-[#26533e] to-[#4bb2d1] font-popp">
 
-        <div class=" top-0 right-0 left-0 bg-[#21351B] ">
-            <header class="sm:flex ">
-                <div class="sm:flex-initial sm:w-[35%] md:w-[45%] flex justify-between uppercase text-[#f9f871] font-medium sm:ml-9 my-4 mx-7">
+        <div class=" top-0 right-0 left-0  ">
+            <header class="sm:flex justify-center">
+                <div class="sm:flex-initial  flex justify-between uppercase text-[#f9f871] font-medium sm:ml-9 my-4 mx-7">
                     <img class="w-40 sm:w-48 " src="./images/logo.png" alt="">
                     <div class="sm:hidden ">
                         <i class="fa fa-bars" aria-hidden="true "></i>
                     </div>
                 </div>
         
-                <div class="hidden sm:flex flex-1 justify-between items-center text-white font-medium my-4 mr-28 z-40">
-                    <button onclick="scrollToSection('home')" class=" hover:text-[#00F60A]" href="">Home</button>
-                    <button onclick="scrollToSection('skill')" class=" hover:text-[#00F60A]" href="">Skill</button>
-                    <button onclick="scrollToSection('project')" class=" hover:text-[#00F60A]" href="">Project</button>
-                    <button onclick="scrollToSection('contact')" class=" hover:text-[#00F60A]" href="">Contact</button>
+                <div class="hidden sm:flex flex-1 justify-center space-x-4 items-center text-white font-medium my-4 mr-28 z-40">
+                    <button onclick="scrollToSection('home')" class="hover:text-[#00F60A]" href="">Home</button>
+                    <button onclick="scrollToSection('skill')" class="hover:text-[#00F60A]" href="">Skill</button>
+                    <button onclick="scrollToSection('project')" class="hover:text-[#00F60A]" href="">Project</button>
+                    <button onclick="scrollToSection('contact')" class="hover:text-[#00F60A]" href="">Contact</button>
                 </div>
+                
+                <!-- <div>
+                    about
+                </div> -->
             </header>
 
         </div>
-
         <section class="home relative" id="home">
-            <div class="mob-info sm:flex mx-4 sm:mx-8 md:mx-24 2xl:mx-40 text-white relative pt-16 pb-32 fade-right animate-once">
-                
-                <div class="flex justify-center rounded-full mx-auto w-[380px] h-[380px] bg-[#cfdacf] overflow-hidden outline-double outline-8 outline-offset-2 outline-[#f9f871] sm:order-2">
+            <div class="mob-info sm:flex mx-4 sm:mx-8 md:mx-24 2xl:mx-40 text-white  relative pt-6 sm:pt-16 pb-32 fade-right animate-once">
+                <div class="flex justify-center mx-auto rounded-full w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] lg:w-[380px] lg:h-[380px] bg-[#18506b] overflow-hidden outline-double outline-8 outline-offset-2 outline-[#cefbe3] sm:order-2">
                     <img class="w-5/6 object-contain" src="./images/profile2.png" alt="Profile Image">
                 </div>
-
                 <div class="sm:w-[65%] relative z-20 pr-8 sm:order-1 mt-8 sm:mt-0">
                     <p class="2xl:text-xl">Hello, My name is</p>
                     <p class="name text-4xl md:text-5xl 2xl:text-7xl font-bold">Karl Cabalquinto</p>
-                    <p class="aspiring text-xl md:text-2xl font-bold text-[#f9f871] 2xl:text-4xl">Aspiring Web Developer</p>
+                    <p class="aspiring text-xl md:text-2xl font-bold text-[#18506b] 2xl:text-4xl">Aspiring Web Developer</p>
                     <p class="info pt-3 sm:text-xs md:text-[18px] lg:text-lg xl:text-xl">
                         As an aspiring web developer, I am passionately honing my skills in various programming languages,
                         frameworks, and design principles. I am on a continuous learning journey, exploring innovative technologies
@@ -66,10 +85,8 @@
                 </div>
             </div>
         </section>
-        
-        
  
-    <section id="skill" class=" bg-[#C7FFC9] text-black z-10 py-6 sm:py-14">
+    <section id="skill" class=" bg-gradient-to-r from-[#26533e] to-[#4bb2d1] text-black z-10 py-6 sm:py-14">
         <div class="title mb-8">
             <h1 class="text-center text-xl sm:text-4xl font-extrabold uppercase" >Technical Skills</h1>
         </div>
@@ -143,13 +160,13 @@
     </section>
 
     
-    <section class="contact bg-[#C7FFC9] text-black" id="contact">
+    <section class="contact bg-gradient-to-r from-[#26533e] to-[#4bb2d1] text-white" id="contact">
         <div class="title pt-8">
             <h1 class="text-center text-2xl sm:text-3xl font-extrabold uppercase">Contact Me</h1>
         </div>
 
-        <div class="sm:flex mx-8 lg:mx-40 sm:py-10 py-4">
-            <div class="flex-initial sm:w-[40%] mr-6">
+        <div class="sm:flex mx-4 sm:mx-8 md:mx-24 2xl:mx-40 sm:py-10 py-4">
+            <div class="flex-initial sm:w-[40%] mr-6 text-white">
                 <p class="lg:text-2xl text-lg">Let's talk opportunities! Reach out through my contact form, and let's explore how 
                     my skills can contribute to your team. Excited to connect and discuss potential 
                     collaborations!
@@ -162,7 +179,7 @@
                     <a href="https://github.com/pingpongrammer"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="./images/github.png" alt=""></a>
                 </div>  
             </div>
-            <div class="flex-1 sm:ml-3 sm:mt-0 mt-4 bg-[#21351B]  shadow-lg p-4 rounded-lg text-white">
+            <div class="flex-1 sm:ml-3 sm:mt-0 mt-4 bg-[#18506b]  shadow-lg p-4 rounded-lg text-white">
                 <p class="text-center text-xl m-2">Message me here..</p>
                 <div>
                     <label for="Name">Name</label>
@@ -176,13 +193,13 @@
                     <label for="Email" class="block mb-1">Message</label>
                     <textarea class="w-full py-1 px-3 text-sm rounded-md" name="" id="" rows="5" placeholder="Your Message"></textarea>
                 </div>
-                <button class="block mx-auto bg-green-500 py-2 px-8 text-base hover:bg-green-700 rounded-md hover:scale-110 duration-300 mt-2 ">Send</button>
+                <button class="block mx-auto bg-[#f9f871] py-2 px-8 text-base text-black hover:bg-yellow-400 rounded-md hover:scale-110 duration-300 mt-2 ">Send</button>
             </div>
         </div>
     </section>
     <footer>
         <div class="w-full py-4">
-            <p class="text-center text-xs sm:text-xs text-white">@2023 Pingpongrammer. All Rights Reserved. </p>
+            <p class="text-center text-xs sm:text-sm text-white">@2023 Pingpongrammer. All Rights Reserved. </p>
         </div>
     </footer>
 
@@ -194,5 +211,22 @@
             section.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
+
+<script>
+    const text = "As an aspiring web developer, I am passionately honing my skills in various programming languages, frameworks, and design principles. I am on a continuous learning journey, exploring innovative technologies to create engaging and user-friendly websites. Currently seeking opportunities, I am eager to apply my knowledge and contribute to dynamic projects, bringing creativity and a solutions-oriented mindset to the ever-evolving landscape of web development.";
+    
+    let index = 0;
+    function typeWriter() {
+        if (index < text.length) {
+            document.getElementById("typingText").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50); // Adjust speed by changing the timeout value
+        }
+    }
+
+    window.onload = function() {
+        typeWriter();
+    };
+</script>
 </body>
 </html>
