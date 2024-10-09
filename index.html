@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54bd867d8c.js" crossorigin="anonymous"></script>
     <title>Karl Cabalquinto</title>
     <style>
             @keyframes wiggle {
@@ -45,15 +46,18 @@
 <body class="bg-gradient-to-r from-[#26533e] to-[#4bb2d1] font-popp">
     
     <div class="top-0 right-0 left-0">
-        <header id="header" class="fixed top-0 left-0 right-0 z-50 sm:flex justify-center border-b-2 border-[#cefbe3] bg-gradient-to-r from-[#26533e] to-[#4bb2d1]">
-            <div class="sm:flex-initial flex justify-between uppercase text-[#f9f871] font-medium sm:ml-9 my-4 mr-28">
+        <header id="header" class="fixed top-0 left-0 right-0 z-50 sm:flex justify-center border-b-2 border-[#cefbe3] bg-gradient-to-r from-[#26533e] to-[#4bb2d1] mx-4">
+            <div class="sm:flex-initial flex justify-between uppercase text-[#f9f871] font-medium sm:ml-9 my-4">
                 <img class="w-40 sm:w-48" src="./images/logo.png" alt="">
                 <div class="sm:hidden">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <!-- Hamburger icon with onclick -->
+                    <i class="fa fa-bars" id="menu-icon" onclick="toggleMenu()"></i>
                 </div>
             </div>
         
-            <div class="hidden sm:flex flex-1 justify-evenly items-center text-white font-medium my-4 z-40">
+            <!-- Mobile Menu with animations -->
+            <div id="mobile-menu" class="sm:flex sm:flex-1 flex flex-col sm:flex-row justify-center sm:justify-evenly items-center text-white font-medium my-4 z-40 transition-all duration-500 ease-in-out bg-opacity-90">
+            <!-- <div id="mobile-menu" class="hidden sm:flex flex-col sm:flex-1 sm:justify-evenly items-center justify-center bg-[#26533e] bg-opacity-90 text-white font-medium absolute top-full w-full left-0 p-4 space-y-4 transition-all duration-500 ease-in-out"> -->
                 <button onclick="scrollToSection('home')" class="hover:text-[#00F60A]">Home</button>
                 <button onclick="scrollToSection('skill')" class="hover:text-[#00F60A]">Skill</button>
                 <button onclick="scrollToSection('project')" class="hover:text-[#00F60A]">Project</button>
@@ -338,15 +342,29 @@
     </script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-    var typed = new Typed('#typed-output', {
-      strings: ["Aspiring Web Developer"],
-      typeSpeed: 50, // Speed of typing
-      backSpeed: 25, // Speed of backspacing (if needed)
-      loop: false // Set to true if you want it to keep repeating
-    });
-  </script>
-
-
-
+    let isMenuOpen = false;
+    
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        
+        if (isMenuOpen) {
+            // Hide the menu
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        } else {
+            // Show the menu
+            menu.classList.remove('hidden');
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        }
+        
+        isMenuOpen = !isMenuOpen;
+    }
+    </script>
+    
+    <!-- Make sure FontAwesome is loaded for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
