@@ -41,6 +41,37 @@
         #typingName {
             animation: blinkCursor 0.75s steps(1) infinite;
         }
+
+        @keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Adding the animation to Tailwind classes */
+.animate-slide-in-right {
+    animation: slideInRight 1s ease-out;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1.2s ease-out;
+}
     </style>
 </head>
 <body class="bg-gradient-to-r from-[#26533e] to-[#4bb2d1] font-popp">
@@ -56,8 +87,7 @@
             </div>
         
             <!-- Mobile Menu with animations -->
-            <div id="mobile-menu" class="sm:flex sm:flex-1 flex flex-col sm:flex-row justify-center sm:justify-evenly items-center text-white font-medium my-4 z-40 transition-all duration-500 ease-in-out bg-opacity-90">
-            <!-- <div id="mobile-menu" class="hidden sm:flex flex-col sm:flex-1 sm:justify-evenly items-center justify-center bg-[#26533e] bg-opacity-90 text-white font-medium absolute top-full w-full left-0 p-4 space-y-4 transition-all duration-500 ease-in-out"> -->
+            <div id="mobile-menu" class="hidden sm:flex sm:flex-1 flex flex-col sm:flex-row justify-center sm:justify-evenly items-center text-white font-medium my-4 z-40 transition-all duration-500 ease-in-out bg-opacity-90">
                 <button onclick="scrollToSection('home')" class="hover:text-[#00F60A]">Home</button>
                 <button onclick="scrollToSection('skill')" class="hover:text-[#00F60A]">Skill</button>
                 <button onclick="scrollToSection('project')" class="hover:text-[#00F60A]">Project</button>
@@ -66,20 +96,20 @@
         </header>
     </div>
     <section class="home min-h-screen w-full flex flex-wrap justify-center items-center relative pt-20 sm:pt-32" id="home">
-        <div class="mob-info w-full sm:flex text-white relative fade-right animate-once px-4 sm:px-8 md:px-12 2xl:px-44">
-            <!-- Image Container -->
-            <div class="flex justify-center mx-auto rounded-full w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] 2xl:w-[440px] 2xl:h-[440px] bg-[#18506b] overflow-hidden outline-double outline-8 outline-offset-2 outline-[#cefbe3] sm:order-2 mt-4 sm:mt-0">
+        <div class="mob-info w-full sm:flex text-white relative px-4 sm:px-8 md:px-12 2xl:px-44">
+            <!-- Image Container with Slide-in Animation -->
+            <div class="image-container flex justify-center mx-auto rounded-full w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] 2xl:w-[440px] 2xl:h-[440px] bg-[#18506b] overflow-hidden outline-double outline-8 outline-offset-2 outline-[#cefbe3] sm:order-2 mt-4 sm:mt-0">
                 <img class="w-5/6 object-contain" src="./images/profile2.png" alt="Profile Image">
             </div>
     
-            <!-- Text Content -->
-            <div class="sm:w-[65%] w-full relative z-20 sm:pr-8 sm:order-1 mt-8 sm:mt-0 flex flex-col items-center justify-center">
+            <!-- Text Content with Fade-in Animation -->
+            <div class="text-container sm:w-[65%] w-full relative z-20 sm:pr-8 sm:order-1 mt-8 sm:mt-0 flex flex-col items-center justify-center">
                 <p class="2xl:text-xl text-center sm:text-left">Hello, My name is</p>
                 <p class="name text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl font-bold text-center sm:text-left">Karl Cabalquinto</p>
                 <p class="aspiring text-xl md:text-2xl 2xl:text-5xl font-bold text-[#cefbe3] text-center sm:text-left">
                     <span id="typed-output"></span>
                 </p>
-                <p class="info mt-4 sm:mt-8 sm:text-sm lg:text-base xl:text-base text-justify ">
+                <p class="info mt-4 sm:mt-8 sm:text-sm lg:text-base xl:text-base text-justify">
                     As an aspiring web developer, I am passionately honing my skills in various programming languages,
                     frameworks, and design principles. I am on a continuous learning journey, exploring innovative technologies
                     to create engaging and user-friendly websites. Currently seeking opportunities, I am eager to apply my
@@ -313,6 +343,7 @@
                     <label for="Name">Name</label>
                     <input class="w-full py-2 px-3 text-sm rounded-md" type="text" placeholder="Your Name">
                 </div>
+                
                 <div class="mt-2">
                     <label for="Email" class="mb-1">Email</label>
                     <input class="w-full py-2 px-3 text-sm rounded-md" type="text" placeholder="Your Email">
@@ -351,7 +382,7 @@
       </script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-    let isMenuOpen = false;
+    let isMenuOpen = true;
     
     function toggleMenu() {
         const menu = document.getElementById('mobile-menu');
@@ -372,6 +403,31 @@
         isMenuOpen = !isMenuOpen;
     }
     </script>
+
+<script>
+    // Select the section to observe
+    const section = document.getElementById('home');
+    const imageContainer = document.querySelector('.image-container');
+    const textContainer = document.querySelector('.text-container');
+
+    // Create an Intersection Observer instance
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add animation classes when the section is visible
+                imageContainer.classList.add('animate-slide-in-right');
+                textContainer.classList.add('animate-fade-in');
+            } else {
+                // Remove the classes when the section is not visible so it can trigger again
+                imageContainer.classList.remove('animate-slide-in-right');
+                textContainer.classList.remove('animate-fade-in');
+            }
+        });
+    });
+
+    // Observe the section
+    observer.observe(section);
+</script>
     
     <!-- Make sure FontAwesome is loaded for icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
