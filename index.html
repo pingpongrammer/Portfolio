@@ -66,18 +66,18 @@
 
 /* Adding the animation to Tailwind classes */
 .animate-slide-in-right {
-    animation: slideInRight 2.5s ease-out;
+    animation: slideInRight 2s ease-out;
 }
 
 .animate-fade-in {
-    animation: fadeIn 2.5s ease-out;
+    animation: fadeIn 2s ease-out;
 }
     </style>
 </head>
 <body class="bg-gradient-to-r from-[#26533e] to-[#4bb2d1] font-popp">
     
     <div class="top-0 right-0 left-0">
-        <header id="header" class="fixed top-0 left-0 right-0 z-50 sm:flex justify-center border-b-2 border-[#cefbe3] bg-gradient-to-r from-[#26533e] to-[#4bb2d1] mx-4">
+        <header id="header" class="fixed top-0 left-0 right-0 z-50 sm:flex justify-center border-b-2 border-[#cefbe3] bg-gradient-to-r from-[#26533e] to-[#4bb2d1] px-4">
             <div class="sm:flex-initial flex justify-between uppercase text-[#f9f871] font-medium sm:ml-9 my-4">
                 <img class="w-40 sm:w-48" src="./images/logo.png" alt="">
                 <div class="sm:hidden">
@@ -117,10 +117,18 @@
     
           
  
-    <section id="skill" class=" bg-gradient-to-r from-[#26533e] to-[#4bb2d1] text-black z-10 py-6 sm:py-14">
-        <div class="title mb-8">
-            <h1 class="text-center text-xl sm:text-5xl font-extrabold text-white" >Technical Skills</h1>
+    <section id="skill" class=" min-h-screen w-full flex flex-wrap justify-center items-center bg-gradient-to-r from-[#26533e] to-[#4bb2d1] text-black z-10 py-6 sm:py-14">
+      
+      <div>
+        <div class="title mb-8 mx-4 sm:mx-8 md:mx-12 2xl:mx-44">
+            <h1 class="text-center text-3xl sm:text-5xl font-extrabold text-white" >Technical Skills</h1>
+            <p class="text-sm sm:text-base text-white text-center">
+                I have skills in various technologies that enable me to develop effective web applications. 
+                Below are the key technologies I work with:
+            </p>
         </div>
+
+  
 
             <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-3 sm:gap-4 mx-4 sm:mx-8 md:mx-12 2xl:mx-44 fade-right animate-once">
                 <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
@@ -171,16 +179,21 @@
                 </div>
             </div>
         
+      </div>
+       
     </section>
 
-    <section class="project text-white" id="project">
-        <div class="title pt-8">
-            <h1 class="text-center text-2xl sm:text-5xl font-extrabold uppercase">Projects</h1>
-        </div>
-
-        <div class="mx-4 sm:mx-8 md:mx-12 2xl:mx-44 sm:py-14 grid lg:grid-cols-2 2xl:grid-cols-3 gap-12">
-            <div class="pb-4 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
-                    <img src="./images/project1.png" class="h-48 sm:h-72 w-full object-obtain rounded-t-lg" alt="">
+    <section class="project text-white min-h-screen w-full flex flex-wrap justify-center items-center" id="project">
+        <div>
+            <div class="title mb-8">
+                <h1 class="text-center text-3xl sm:text-5xl font-extrabold uppercase">Projects</h1>
+            </div>
+    
+            <div class="mx-4 sm:mx-8 md:mx-12 2xl:mx-44 sm:py-14 grid lg:grid-cols-2 2xl:grid-cols-3 gap-12">
+                <div class="pb-4 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="./images/project1.png" class="w-full h-full object-cover rounded-t-lg" alt="">
+                    </div>
                     <div class="mx-3">
                         <div class="flex flex-wrap gap-2 mt-2 text-black">
                             <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
@@ -212,16 +225,18 @@
                                 <p>Tailwind</p>
                             </div>
                         </div>
-                        <p class=" xl:text-lg sm:text-md text-sm font-semibold my-2">Barangay Profiling and Record Keeping System</p>
-    
+                        <p class="xl:text-lg sm:text-md text-sm font-semibold my-2">Barangay Profiling and Record Keeping System</p>
                         <div>
                             <button class="bg-slate-400 px-3 py-1 rounded-lg">More Details</button>
                             <button class="bg-[#18506b] px-3 py-1 rounded-lg">Visit Website</button>
                         </div>
                     </div>
                 </div>
-            <div class="pb-4 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
-                    <img src="./images/project2.png" class="h-48 sm:h-72 w-full object-obtain rounded-t-lg" alt="">
+    
+                <div class="pb-4 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="./images/project2.png" class="w-full h-full object-cover rounded-t-lg" alt="">
+                    </div>
                     <div class="mx-3">
                         <div class="flex flex-wrap gap-2 mt-2 text-black">
                             <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
@@ -257,16 +272,18 @@
                                 <p>Mysql</p>
                             </div>
                         </div>
-                        <p class=" xl:text-lg sm:text-md text-sm font-semibold my-2">Barangay Profiling and Record Keeping System</p>
-    
+                        <p class="xl:text-lg sm:text-md text-sm font-semibold my-2">Barangay Profiling and Record Keeping System</p>
                         <div>
                             <button class="bg-slate-400 px-3 py-1 rounded-lg">More Details</button>
                             <button class="bg-[#18506b] px-3 py-1 rounded-lg">Visit Website</button>
                         </div>
                     </div>
-            </div>
-            <div class="pb-2 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
-                    <img src="./images/portfolio.jpeg" class="h-48 sm:h-72 w-full object-obtain rounded-t-lg" alt="">
+                </div>
+    
+                <div class="pb-2 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="./images/portfolio.jpeg" class="w-full h-full object-cover rounded-t-lg" alt="">
+                    </div>
                     <div class="mx-3">
                         <div class="flex flex-wrap gap-2 mt-2 text-black">
                             <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
@@ -286,17 +303,18 @@
                                 <p>Javascript</p>
                             </div>
                         </div>
-                        <p class=" xl:text-lg sm:text-md text-sm font-semibold my-2">Barangay Profiling and Record Keeping System</p>
-    
+                        <p class="xl:text-lg sm:text-md text-sm font-semibold my-2">My Portfolio</p>
                         <div>
                             <button class="bg-slate-400 px-3 py-1 rounded-lg">More Details</button>
                             <button class="bg-[#18506b] px-3 py-1 rounded-lg">Visit Website</button>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </section>
-
+    
+    
     
     <section class="contact bg-gradient-to-r from-[#26533e] to-[#4bb2d1] text-white" id="contact">
         <div class="title pt-8">
@@ -331,7 +349,7 @@
                     <label for="Email" class="block mb-1">Message</label>
                     <textarea class="w-full py-1 px-3 text-sm rounded-md" name="" id="" rows="5" placeholder="Your Message"></textarea>
                 </div>
-                <button class="block mx-auto bg-[#f9f871] py-2 px-8 text-base text-black hover:bg-yellow-400 rounded-md hover:scale-110 duration-300 mt-2 ">Send</button>
+                <button class="block mx-auto bg-[#18506b] py-2 px-8 text-base text-black rounded-md hover:scale-110 duration-300 mt-2 ">Send</button>
             </div>
         </div>
     </section>
@@ -356,7 +374,7 @@
           strings: ["Aspiring Web Developer"],
           typeSpeed: 80, // Speed of typing
           backSpeed: 35, // Speed of backspacing (if needed)
-          loop: false // Set to true if you want it to keep repeating
+          loop: true // Set to true if you want it to keep repeating
         });
       </script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
