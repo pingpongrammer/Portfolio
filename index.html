@@ -10,19 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/54bd867d8c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <title>Karl Cabalquinto</title>
+    <title>Karl Cabalquinto | Web Developer</title>
     <style>
-            @keyframes wiggle {
-            0%, 100% {
-                transform: rotate(0deg);
-            }
-            50% {
-                transform: rotate(5deg);
-            }
+        .logo-text {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.5px;
+    padding-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+    .logo-text span {
+        font-size: 1.5rem;
+    }
+}
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
         }
 
         .animate-wiggle:hover {
-            animation: wiggle 0.5s infinite;
+            animation: wiggle 0.4s ease-in-out;
+            transform-origin: center bottom;
         }
 
         #typingName {
@@ -44,398 +53,1089 @@
         }
 
         @keyframes slideInRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-50%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
-/* Adding the animation to Tailwind classes */
-.animate-slide-in-right {
-    animation: slideInRight 2s ease-out;
-}
+        .animate-slide-in-right {
+            animation: slideInRight 1s ease-out forwards;
+        }
 
-.animate-fade-in {
-    animation: fadeIn 2s ease-out;
-}
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out 0.3s forwards;
+        }
 
-.profile{
-    filter: drop-shadow(1px 1px 20px #cefbe3);
-}
+        .profile {
+            filter: drop-shadow(1px 1px 20px rgba(206, 251, 227, 0.7));
+            transition: transform 0.3s ease;
+        }
+
+        .profile:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .contact-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-input:focus {
+            outline: none;
+            border-color: #cefbe3;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #18506b, #26533e);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .header-scroll {
+            background: rgba(38, 83, 62, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #cefbe3, transparent);
+            border-radius: 3px;
+        }
+
+        .tech-tag {
+            transition: all 0.2s ease;
+        }
+
+        .tech-tag:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.7) !important;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #0d1f18, #1a3a2e);
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid #cefbe3;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            color: #cefbe3;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: #f9f871;
+            transform: rotate(90deg);
+        }
+        
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .project-gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #cefbe3;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .project-gallery img:hover {
+            transform: scale(1.03);
+        }
+        
+        .project-features {
+            margin: 1.5rem 0;
+        }
+        
+        .project-features ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .project-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .project-features li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #cefbe3;
+        }
+        
+        .modal-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .modal-tech-tag {
+            background: rgba(206, 251, 227, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .modal-tech-tag span {
+            width: 8px;
+            height: 8px;
+            background: #cefbe3;
+            border-radius: 50%;
+        }
+        
+        .modal-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .modal-links a {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-links .live-link {
+            background: #cefbe3;
+            color: #1a3a2e;
+        }
+        
+        .modal-links .live-link:hover {
+            background: #f9f871;
+        }
+        
+        .modal-links .code-link {
+            border: 1px solid #cefbe3;
+            color: #cefbe3;
+        }
+        
+        .modal-links .code-link:hover {
+            background: rgba(206, 251, 227, 0.1);
+        }
     </style>
 </head>
-<body class="bg-gradient-to-r from-[#26533e] to-[#4bb2d1] font-popp">
+<body class="bg-gradient-to-br from-[#1a3a2e] to-[#2a6d8a] font-popp text-white">
     
     <div class="top-0 right-0 left-0">
-        <header id="header" class="fixed top-0 left-0 right-0 z-50 sm:flex justify-center border-b-2 border-[#cefbe3] bg-gradient-to-r from-[#26533e] to-[#4bb2d1] px-4">
-            <div class="sm:flex-initial flex justify-between uppercase text-[#f9f871] font-medium sm:ml-9 my-4">
-                <img class="w-40 sm:w-48" src="./images/logo.png" alt="">
+        <header id="header" class="fixed top-0 left-0 right-0 z-50 sm:flex justify-center border-b border-[rgba(206,251,227,0.3)] bg-gradient-to-r from-[rgba(38,83,62,0.8)] to-[rgba(75,178,209,0.8)] px-4 backdrop-blur-sm transition-all duration-300">
+            <div class="sm:flex-initial flex justify-between items-center font-medium sm:ml-9 my-3">
+                <!-- Text Logo with Animation -->
+                <div class="logo-text group relative">
+                    <span class="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f9f871] to-[#cefbe3] tracking-tight">
+                        Pingpongrammer
+                    </span>
+                    <span class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#f9f871] to-[#cefbe3] w-0 group-hover:w-full transition-all duration-300"></span>
+                </div>
+                
                 <div class="sm:hidden">
-                    <i class="fa fa-bars" id="menu-icon" onclick="toggleMenu()"></i>
+                    <i class="fa fa-bars text-2xl text-[#f9f871]" id="menu-icon" onclick="toggleMenu()"></i>
                 </div>
             </div>
-
-            <div id="mobile-menu" class="hidden sm:flex sm:flex-1 flex flex-col sm:flex-row justify-center sm:justify-evenly items-center text-white font-medium my-4 z-40 transition-all duration-500 ease-in-out bg-opacity-90">
-                <button onclick="scrollToSection('home')" class="hover:text-[#00F60A]">Home</button>
-                <button onclick="scrollToSection('skill')" class="hover:text-[#00F60A]">Skill</button>
-                <button onclick="scrollToSection('project')" class="hover:text-[#00F60A]">Project</button>
-                <button onclick="scrollToSection('contact')" class="hover:text-[#00F60A]">Contact</button>
+    
+            <div id="mobile-menu" class="hidden sm:flex sm:flex-1 flex flex-col sm:flex-row justify-center sm:justify-evenly items-center text-white font-medium my-3 z-40 transition-all duration-500 ease-in-out">
+                <button onclick="scrollToSection('home')" class="px-4 py-2 rounded-lg hover:bg-[rgba(206,251,227,0.2)] hover:text-[#cefbe3] transition-all relative group">
+                    Home
+                    <span class="absolute bottom-0 left-1/2 h-0.5 bg-[#cefbe3] w-0 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
+                </button>
+                <button onclick="scrollToSection('skill')" class="px-4 py-2 rounded-lg hover:bg-[rgba(206,251,227,0.2)] hover:text-[#cefbe3] transition-all relative group">
+                    Skills
+                    <span class="absolute bottom-0 left-1/2 h-0.5 bg-[#cefbe3] w-0 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
+                </button>
+                <button onclick="scrollToSection('project')" class="px-4 py-2 rounded-lg hover:bg-[rgba(206,251,227,0.2)] hover:text-[#cefbe3] transition-all relative group">
+                    Projects
+                    <span class="absolute bottom-0 left-1/2 h-0.5 bg-[#cefbe3] w-0 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
+                </button>
+                <button onclick="scrollToSection('contact')" class="px-4 py-2 rounded-lg hover:bg-[rgba(206,251,227,0.2)] hover:text-[#cefbe3] transition-all relative group">
+                    Contact
+                    <span class="absolute bottom-0 left-1/2 h-0.5 bg-[#cefbe3] w-0 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
+                </button>
             </div>
         </header>
     </div>
+
     <section class="home min-h-screen w-full flex flex-wrap justify-center items-center relative pt-20 sm:pt-32" id="home">
         <div class="mob-info w-full sm:flex text-white relative px-4 sm:px-8 md:px-12 2xl:px-44">
-            <div class="image-container flex justify-center mx-auto rounded-full w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] 2xl:w-[440px] 2xl:h-[440px] bg-[#18506b] overflow-hidden outline-double outline-8 outline-offset-2 outline-[#cefbe3] sm:order-2 mt-4 sm:mt-0">
+            <div class="image-container flex justify-center mx-auto rounded-full w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] lg:w-[340px] lg:h-[340px] 2xl:w-[440px] 2xl:h-[440px] bg-gradient-to-br from-[#18506b] to-[#1a3a2e] overflow-hidden outline outline-4 outline-offset-4 outline-[rgba(206,251,227,0.5)] sm:order-2 mt-4 sm:mt-0 shadow-2xl">
                 <img class="profile w-5/6 object-contain" src="./images/profile2.png" alt="Profile Image">
             </div>
-            <div class="text-container sm:w-[65%] w-full relative z-20 sm:pr-8 sm:order-1 mt-8 sm:mt-0 flex flex-col items-center justify-center">
-                <p class="2xl:text-xl text-center sm:text-left">Hello, My name is</p>
-                <p class="name text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl font-bold text-center sm:text-left">Karl Cabalquinto</p>
-                <p class="aspiring text-xl md:text-2xl 2xl:text-5xl font-bold text-[#cefbe3] text-center sm:text-left">
+            <div class="text-container sm:w-[65%] w-full relative z-20 sm:pr-8 sm:order-1 mt-8 sm:mt-0 flex flex-col items-center sm:items-start justify-center">
+                <p class="2xl:text-xl text-center sm:text-left text-[#cefbe3] mb-2">Hello, I'm</p>
+                <h1 class="name text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl font-bold text-center sm:text-left bg-clip-text text-transparent bg-gradient-to-r from-[#f9f871] to-[#cefbe3] mb-4">
+                    Karl Cabalquinto
+                </h1>
+                <p class="aspiring text-xl md:text-2xl 2xl:text-5xl font-bold text-[#cefbe3] text-center sm:text-left mb-6">
                     <span id="typed-output"></span>
                 </p>
-                <p class="info mt-4 sm:mt-8 sm:text-sm lg:text-base xl:text-base text-justify">
+                <p class="info mt-4 sm:mt-8 sm:text-sm lg:text-base xl:text-base text-justify sm:text-left leading-relaxed text-white/90">
                     As an aspiring web developer, I am passionately honing my skills in various programming languages,
                     frameworks, and design principles. I am on a continuous learning journey, exploring innovative technologies
                     to create engaging and user-friendly websites. Currently seeking opportunities, I am eager to apply my
                     knowledge and contribute to dynamic projects, bringing creativity and a solutions-oriented mindset to
                     the ever-evolving landscape of web development.
-                </p>                
+                </p>
+                <div class="mt-8 flex gap-4">
+                    <button onclick="scrollToSection('contact')" class="btn-primary px-6 py-3 rounded-lg font-medium text-white hover:bg-gradient-to-r hover:from-[#1a3a2e] hover:to-[#18506b]">
+                        Contact Me
+                    </button>
+                    <button onclick="scrollToSection('project')" class="px-6 py-3 rounded-lg font-medium border-2 border-[#cefbe3] text-[#cefbe3] hover:bg-[#cefbe3] hover:text-[#1a3a2e] transition-all">
+                        View Projects
+                    </button>
+                </div>                
             </div>
         </div>
     </section>
     
-          
- 
-    <section id="skill" class=" min-h-screen w-full flex flex-wrap justify-center items-center bg-gradient-to-r from-[#26533e] to-[#4bb2d1] text-black z-10 py-6 sm:py-14">
-      
-      <div>
-        <div class="title mb-8 mx-4 sm:mx-8 md:mx-12 2xl:mx-44">
-            <h1 class="text-center text-3xl sm:text-5xl font-extrabold text-white" >Technical Skills</h1>
-            <p class="text-sm sm:text-base text-white text-center">
-                I have skills in various technologies that enable me to develop effective web applications. 
-                Below are the key technologies I work with:
+    <section id="skill" class="min-h-screen w-full flex flex-wrap justify-center items-center py-16">
+        <div class="w-full">
+            <div class="title mb-12 mx-4 sm:mx-8 md:mx-12 2xl:mx-44">
+                <h1 class="text-center text-3xl sm:text-5xl font-extrabold text-white section-title">
+                    Technical Skills
+                </h1>
+                <p class="text-sm sm:text-base text-white/80 text-center max-w-3xl mx-auto mt-4">
+                    I have skills in various technologies that enable me to develop effective web applications. 
+                    Below are the key technologies I work with:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-4 sm:gap-6 mx-4 sm:mx-8 md:mx-12 2xl:mx-44">
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/html.png" alt="HTML">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">HTML</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/css.png" alt="CSS">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">CSS</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-[45%] object-contain" src="./images/JavaScript.png" alt="JavaScript">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">JavaScript</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-4/6 object-contain" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">PHP</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/git.png" alt="Git">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">Git</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/github.png" alt="GitHub">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">GitHub</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/laravel.png" alt="Laravel">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">Laravel</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-4/6 object-contain" src="./images/tailwind.png" alt="Tailwind">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">Tailwind</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/livewire/livewire-original.svg" alt="Livewire">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">Livewire</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-4/6 object-contain" src="./images/alpine.png" alt="Alpine">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">Alpine</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="./images/bootstrap.png" alt="Bootstrap">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">Bootstrap</p>
+                </div>
+                
+                <div class="flex justify-center items-center flex-col bg-white/10 skill-card shadow-lg p-4 rounded-xl backdrop-blur-sm border border-white/10 animate-wiggle">
+                    <img class="w-3/6 object-contain" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <p class="text-center font-semibold mt-3 text-xs sm:text-base">MySQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project min-h-screen w-full flex flex-wrap justify-center items-center py-16 bg-gradient-to-br from-[#1a3a2e]/50 to-[#2a6d8a]/50" id="project">
+        <div class="w-full">
+            <div class="title mb-12 mx-4 sm:mx-8 md:mx-12 2xl:mx-44">
+                <h1 class="text-center text-3xl sm:text-5xl font-extrabold uppercase section-title">
+                    My Projects
+                </h1>
+                <p class="text-sm sm:text-base text-white/80 text-center max-w-3xl mx-auto mt-4">
+                    Here are some of my recent projects showcasing my skills and capabilities as a web developer.
+                </p>
+            </div>
+    
+            <div class="mx-4 sm:mx-8 md:mx-12 2xl:mx-44 grid lg:grid-cols-2 2xl:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card pb-4 mx-auto bg-[#0d1f18] rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="./images/project1.png" class="w-full h-full object-cover" alt="Barangay Profiling System">
+                    </div>
+                    <div class="mx-4 mt-4">
+                        <div class="flex flex-wrap gap-2 text-black">
+                            <!-- Tech tags remain the same -->
+                        </div>
+                        <h3 class="xl:text-xl sm:text-lg text-base font-bold my-3 text-[#cefbe3]">Barangay Profiling System</h3>
+                        <p class="text-sm text-white/80 mb-4">A comprehensive system for managing barangay resident records with secure data handling.</p>
+                        <div class="flex gap-3">
+                            <button onclick="openModal('modal1')" class="bg-slate-400/90 hover:bg-slate-400 px-4 py-2 rounded-lg text-sm font-medium transition-all">Details</button>
+                            <button class="bg-[#18506b] hover:bg-[#1a3a2e] px-4 py-2 rounded-lg text-sm font-medium transition-all">View Website</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card pb-4 mx-auto bg-[#0d1f18] rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="./images/sanslechon1.png" class="w-full h-full object-cover" alt="E-commerce Website">
+                    </div>
+                    <div class="mx-4 mt-4">
+                        <div class="flex flex-wrap gap-2 text-black">
+                            <!-- Tech tags remain the same -->
+                        </div>
+                        <h3 class="xl:text-xl sm:text-lg text-base font-bold my-3 text-[#cefbe3]">E-commerce Website</h3>
+                        <p class="text-sm text-white/80 mb-4">A full-featured online store with product management, cart functionality, and secure checkout.</p>
+                        <div class="flex gap-3">
+                            <button onclick="openModal('modal2')" class="bg-slate-400/90 hover:bg-slate-400 px-4 py-2 rounded-lg text-sm font-medium transition-all">Details</button>
+                            <button class="bg-[#18506b] hover:bg-[#1a3a2e] px-4 py-2 rounded-lg text-sm font-medium transition-all">View Website</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card pb-4 mx-auto bg-[#0d1f18] rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all">
+                    <div class="aspect-w-16 aspect-h-9 overflow-hidden">
+                        <img src="./images/affiliate1.png" class="w-full h-full object-cover" alt="Portfolio Website">
+                    </div>
+                    <div class="mx-4 mt-4">
+                        <div class="flex flex-wrap gap-2 text-black">
+                            <!-- Tech tags remain the same -->
+                        </div>
+                        <h3 class="xl:text-xl sm:text-lg text-base font-bold my-3 text-[#cefbe3]">Affiliate System</h3>
+                        <p class="text-sm text-white/80 mb-4">A responsive portfolio website showcasing my skills, projects, and professional information.</p>
+                        <div class="flex gap-3">
+                            <button onclick="openModal('modal3')" class="bg-slate-400/90 hover:bg-slate-400 px-4 py-2 rounded-lg text-sm font-medium transition-all">Details</button>
+                            <button class="bg-[#18506b] hover:bg-[#1a3a2e] px-4 py-2 rounded-lg text-sm font-medium transition-all">Visit Website</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Project 1 Modal -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#cefbe3] mb-4">Barangay Profiling System</h2>
+        
+        <div class="modal-tech-tags">
+            <div class="modal-tech-tag"><span></span>HTML</div>
+            <div class="modal-tech-tag"><span></span>CSS</div>
+            <div class="modal-tech-tag"><span></span>PHP</div>
+            <div class="modal-tech-tag"><span></span>Laravel</div>
+            <div class="modal-tech-tag"><span></span>JavaScript</div>
+            <div class="modal-tech-tag"><span></span>MySQL</div>
+            <div class="modal-tech-tag"><span></span>Tailwind</div>
+        </div>
+        
+        <div class="project-gallery">
+            <img src="./images/project1.png" alt="Barangay System Screenshot 1" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/project1-detail1.jpg" alt="Barangay System Screenshot 2" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/project1-detail2.jpg" alt="Barangay System Screenshot 3" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+        </div>
+        
+        <div class="project-description">
+            <h3 class="text-xl font-semibold text-[#f9f871] mb-2">Project Overview</h3>
+            <p class="text-white/90">
+                The Barangay Profiling System is a comprehensive web application designed to streamline the management of resident records 
+                for local government units. This system replaces manual record-keeping with a secure, efficient digital solution that 
+                includes features for resident registration, document requests, and reporting.
+            </p>
+            
+            <div class="project-features">
+                <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Key Features</h3>
+                <ul>
+                    <li>Secure resident registration and profile management</li>
+                    <li>Document request and tracking system</li>
+                    <li>Automated report generation for barangay officials</li>
+                    <li>Role-based access control for different user types</li>
+                    <li>Data visualization dashboard for statistics</li>
+                    <li>Responsive design for mobile access</li>
+                </ul>
+            </div>
+            
+            <div class="project-challenges">
+                <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Challenges & Solutions</h3>
+                <p class="text-white/90">
+                    One major challenge was ensuring data security while making the system accessible to barangay officials with varying 
+                    technical skills. I implemented a robust authentication system with role-based permissions and created an intuitive 
+                    interface with clear instructions for each process.
+                </p>
+            </div>
+        </div>
+        
+        <div class="modal-links">
+            <a href="#" class="live-link">View Live Project</a>
+            <a href="#" class="code-link">View Source Code</a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 2 Modal -->
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#cefbe3] mb-4">E-commerce Website</h2>
+        
+        <div class="modal-tech-tags">
+            <div class="modal-tech-tag"><span></span>HTML</div>
+            <div class="modal-tech-tag"><span></span>CSS</div>
+            <div class="modal-tech-tag"><span></span>Tailwind</div>
+            <div class="modal-tech-tag"><span></span>PHP</div>
+            <div class="modal-tech-tag"><span></span>Laravel</div>
+            <div class="modal-tech-tag"><span></span>Livewire</div>
+            <div class="modal-tech-tag"><span></span>Alpine</div>
+            <div class="modal-tech-tag"><span></span>MySQL</div>
+        </div>
+        
+        <div class="project-gallery">
+            <img src="./images/sanslechon1.png" alt="E-commerce Homepage" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/sanslechon2.png" alt="Product Page" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/sanslechon3.png" alt="Cart" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/sanslechon4.png" alt="Checkout Process" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/sanslechon5.png" alt="Paymongo Integration" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+        </div>
+        
+        <div class="project-description">
+            <h3 class="text-xl font-semibold text-[#f9f871] mb-2">Project Overview</h3>
+            <p class="text-white/90">
+                This e-commerce platform was developed as a full-stack solution for small businesses to sell products online. 
+                It includes all essential e-commerce features while maintaining a clean, user-friendly interface that focuses 
+                on conversion optimization.
+            </p>
+            
+            <div class="project-features">
+                <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Key Features</h3>
+                <ul>
+                    <li>Product catalog with categories and filters</li>
+                    <li>User accounts with order history</li>
+                    <li>Shopping cart with real-time updates</li>
+                    <li>Secure checkout process with multiple payment options</li>
+                    <li>Admin dashboard for inventory management</li>
+                    <li>Product search with auto-suggestions</li>
+                    <li>Responsive design optimized for all devices</li>
+                </ul>
+            </div>
+            
+            <div class="project-challenges">
+                <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Technical Highlights</h3>
+                <p class="text-white/90">
+                    The project leveraged Laravel Livewire for dynamic interfaces without writing extensive JavaScript. 
+                    I implemented a custom inventory management system that prevents overselling and developed a caching 
+                    strategy to optimize performance during high traffic periods.
+                </p>
+            </div>
+        </div>
+        
+        <div class="modal-links">
+            <a href="#" class="live-link">View Live Project</a>
+            <a href="#" class="code-link">View Source Code</a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3 Modal -->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#cefbe3] mb-4">San's Lechon Affiliate System</h2>
+        
+        <div class="modal-tech-tags">
+            <div class="modal-tech-tag"><span></span>HTML</div>
+            <div class="modal-tech-tag"><span></span>CSS</div>
+            <div class="modal-tech-tag"><span></span>Tailwind</div>
+            <div class="modal-tech-tag"><span></span>JavaScript</div>
+            <div class="modal-tech-tag"><span></span>QR Code Integration</div>
+        </div>
+        
+        <div class="project-gallery">
+            <img src="./images/affiliate1.png" alt="Affiliate Dashboard" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/affiliate2.png" alt="Registration Page" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+            <img src="./images/affiliate3.png" alt="Referral Tools" class="gallery-image cursor-zoom-in" onclick="openLightbox(this)">
+        </div>
+        
+        <div class="project-description">
+            <h3 class="text-xl font-semibold text-[#f9f871] mb-2">Project Overview</h3>
+            <p class="text-white/90">
+                The San's Lechon Affiliate System is a comprehensive platform designed to manage and track affiliate marketing 
+                activities. The system features a user-friendly dashboard with performance analytics, referral link generation, 
+                QR code sharing, and commission tracking. Built with a mobile-first approach, it empowers affiliates to 
+                promote products effectively while providing administrators with valuable insights.
+            </p>
+            
+            <div class="project-features">
+                <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Key Features</h3>
+                <ul>
+                    <li>Interactive dashboard with real-time performance metrics</li>
+                    <li>Custom referral link generator with QR code functionality</li>
+                    <li>One-click copy feature for easy link sharing</li>
+                    <li>Social media integration for seamless promotion</li>
+                    <li>Secure registration and login system</li>
+                    <li>Responsive design that works across all devices</li>
+                    <li>Commission tracking and payout history</li>
+                </ul>
+            </div>
+            
+            <div class="project-challenges">
+                <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Technical Implementation</h3>
+                <p class="text-white/90">
+                    The system presented unique challenges in implementing secure referral tracking while maintaining 
+                    excellent performance. I leveraged JavaScript's Clipboard API for the copy functionality and 
+                    integrated QRCode.js for dynamic code generation. The dashboard uses chart.js for data visualization, 
+                    and all components were built with accessibility in mind, following WCAG guidelines.
+                </p>
+            </div>
+        </div>
+        
+        <div class="modal-links">
+            <a href="#" class="live-link">View Live Demo</a>
+            <a href="#" class="code-link">View Source Code</a>
+        </div>
+    </div>
+</div>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-[9999] hidden items-center justify-center p-4">
+    <div class="relative max-w-6xl w-full max-h-[90vh]">
+        <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white text-3xl hover:text-[#f9f871] transition-colors">
+            &times;
+        </button>
+        <img id="lightbox-image" class="max-w-full max-h-[80vh] mx-auto object-contain" src="" alt="">
+        <p id="lightbox-caption" class="text-white text-center mt-2 text-sm sm:text-base"></p>
+    </div>
+</div>
+    
+<section class="mini-projects min-h-screen w-full flex flex-wrap justify-center items-center py-16 bg-gradient-to-br from-[#1a3a2e]/70 to-[#2a6d8a]/70" id="mini-projects">
+    <div class="w-full">
+        <div class="title mb-12 mx-4 sm:mx-8 md:mx-12 2xl:mx-44">
+            <h1 class="text-center text-3xl sm:text-5xl font-extrabold uppercase section-title text-[#cefbe3]">
+                Mini Projects
+            </h1>
+            <p class="text-sm sm:text-base text-white/80 text-center max-w-3xl mx-auto mt-4">
+                Quick experiments and small projects that demonstrate specific skills or concepts.
             </p>
         </div>
 
-  
-
-            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-3 sm:gap-4 mx-4 sm:mx-8 md:mx-12 2xl:mx-44 fade-right animate-once">
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="./images/html.png" alt="HTML">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">HTML</p>
+        <div class="mx-4 sm:mx-8 md:mx-12 2xl:mx-44 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Mini Project 1 -->
+            <div class="mini-project-card bg-[#0d1f18]/60 rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all hover:shadow-lg hover:shadow-[#cefbe3]/10">
+                <div class="aspect-video bg-[#1a3a2e] flex items-center justify-center">
+                    <img src="./images/rock-paper-scissor.png" alt="Weather App" class="w-full h-full object-cover">
                 </div>
-                
-                
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="./images/css.png" alt="Cssa">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">CSS</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-[45%] object-contain" src="./images/JavaScript.png" alt="Javascript">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">JavaScript</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-4/6 object-contain" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="Php">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Php</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="./images/git.png" alt="Git">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Git</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="./images/github.png" alt="Github">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Github</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="./images/laravel.png" alt="Laravel">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Laravel</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-4/6 object-contain" src="./images/tailwind.png" alt="Tailwind">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Tailwind</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/livewire/livewire-original.svg" alt="Livewire">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Livewire</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-4/6 object-contain" src="./images/alpine.png" alt="Alpine">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Alpine</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="./images/bootstrap.png" alt="Alpine">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Bootstrap</p>
-                </div>
-                <div class="flex justify-center items-center flex-col bg-white bg-opacity-50 shadow-lg p-4 rounded-lg animate-wiggle">
-                    <img class="w-3/6 object-contain" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Alpine">
-                    <p class="text-center font-semibold mt-2 text-xs sm:text-base">Mysql</p>
+                <div class="p-5">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">HTML</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">CSS</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">JavaScript</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">LocalStorage</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#f9f871] mb-2">Rock Paper Scissor</h3>
+                    <p class="text-sm text-white/80 mb-4">A fun and interactive Rock-Paper-Scissors game built with HTML, CSS, and JavaScript. Features smooth animations, score tracking, and LocalStorage support to keep your game history.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="text-sm px-4 py-2 rounded-lg bg-[#cefbe3]/10 text-[#cefbe3] hover:bg-[#cefbe3] hover:text-[#1a3a2e] transition-all border border-[#cefbe3]/20">
+                            Live Demo
+                        </a>
+                        <a href="#" class="text-sm px-4 py-2 rounded-lg bg-transparent text-[#cefbe3] hover:bg-[#cefbe3]/10 transition-all border border-[#cefbe3]/20">
+                            Code
+                        </a>
+                    </div>
                 </div>
             </div>
-        
-      </div>
-       
-    </section>
 
-    <section class="project text-white min-h-screen w-full flex flex-wrap justify-center items-center" id="project">
-        <div>
-            <div class="title mb-8">
-                <h1 class="text-center text-3xl sm:text-5xl font-extrabold uppercase">Projects</h1>
+            <!-- Mini Project 2 -->
+            <div class="mini-project-card bg-[#0d1f18]/60 rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all hover:shadow-lg hover:shadow-[#cefbe3]/10">
+                <div class="aspect-video bg-[#1a3a2e] flex items-center justify-center">
+                    <img src="./images/project1.png" alt="Todo App" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">React</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">LocalStorage</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">Tailwind</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#f9f871] mb-2">Todo Application</h3>
+                    <p class="text-sm text-white/80 mb-4">Feature-rich todo app with drag-and-drop sorting, categories, and persistent storage.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="text-sm px-4 py-2 rounded-lg bg-[#cefbe3]/10 text-[#cefbe3] hover:bg-[#cefbe3] hover:text-[#1a3a2e] transition-all border border-[#cefbe3]/20">
+                            Live Demo
+                        </a>
+                        <a href="#" class="text-sm px-4 py-2 rounded-lg bg-transparent text-[#cefbe3] hover:bg-[#cefbe3]/10 transition-all border border-[#cefbe3]/20">
+                            Code
+                        </a>
+                    </div>
+                </div>
             </div>
-    
-            <div class="mx-4 sm:mx-8 md:mx-12 2xl:mx-44 sm:py-14 grid lg:grid-cols-2 2xl:grid-cols-3 gap-12">
-                <div class="pb-4 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="./images/project1.png" class="w-full h-full object-cover rounded-t-lg" alt="">
-                    </div>
-                    <div class="mx-3">
-                        <div class="flex flex-wrap gap-2 mt-2 text-black">
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Html</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>CSS</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Php</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Laravel</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Javascript</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Mysql</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Tailwind</p>
-                            </div>
-                        </div>
-                        <p class="xl:text-lg sm:text-md text-sm font-semibold my-2">Barangay Profiling and Record Keeping System</p>
-                        <div>
-                            <button class="bg-slate-400 px-3 py-1 rounded-lg">More Details</button>
-                            <button class="bg-[#18506b] px-3 py-1 rounded-lg">Visit Website</button>
-                        </div>
-                    </div>
+
+            <!-- Mini Project 3 -->
+            <div class="mini-project-card bg-[#0d1f18]/60 rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all hover:shadow-lg hover:shadow-[#cefbe3]/10">
+                <div class="aspect-video bg-[#1a3a2e] flex items-center justify-center">
+                    <img src="./images/project1.png" alt="Recipe Finder" class="w-full h-full object-cover">
                 </div>
-    
-                <div class="pb-4 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="./images/project2.png" class="w-full h-full object-cover rounded-t-lg" alt="">
+                <div class="p-5">
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">Vue.js</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">Edamam API</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-[#cefbe3]/10 text-[#cefbe3] border border-[#cefbe3]/20">CSS Grid</span>
                     </div>
-                    <div class="mx-3">
-                        <div class="flex flex-wrap gap-2 mt-2 text-black">
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Html</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>CSS</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Tailwind</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Php</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Laravel</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Livewire</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Alpine</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Mysql</p>
-                            </div>
-                        </div>
-                        <p class="xl:text-lg sm:text-md text-sm font-semibold my-2">E-commerce Website</p>
-                        <div>
-                            <button class="bg-slate-400 px-3 py-1 rounded-lg">More Details</button>
-                            <button class="bg-[#18506b] px-3 py-1 rounded-lg">Visit Website</button>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="pb-2 mx-auto bg-green-950 bg-opacity-40 rounded-lg">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <img src="./images/portfolio.jpeg" class="w-full h-full object-cover rounded-t-lg" alt="">
-                    </div>
-                    <div class="mx-3">
-                        <div class="flex flex-wrap gap-2 mt-2 text-black">
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Html</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>CSS</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Tailwind</p>
-                            </div>
-                            <div class="text-[10px] m-0 rounded-md bg-white bg-opacity-50 py-1 px-2 flex items-center gap-2">
-                                <span class="h-2 w-2 bg-green-500 rounded-full"></span>
-                                <p>Javascript</p>
-                            </div>
-                        </div>
-                        <p class="xl:text-lg sm:text-md text-sm font-semibold my-2">My Portfolio</p>
-                        <div>
-                            <button class="bg-slate-400 px-3 py-1 rounded-lg">More Details</button>
-                            <button class="bg-[#18506b] px-3 py-1 rounded-lg">Visit Website</button>
-                        </div>
+                    <h3 class="text-xl font-bold text-[#f9f871] mb-2">Recipe Finder</h3>
+                    <p class="text-sm text-white/80 mb-4">Search thousands of recipes by ingredients with nutritional information and cooking instructions.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="text-sm px-4 py-2 rounded-lg bg-[#cefbe3]/10 text-[#cefbe3] hover:bg-[#cefbe3] hover:text-[#1a3a2e] transition-all border border-[#cefbe3]/20">
+                            Live Demo
+                        </a>
+                        <a href="#" class="text-sm px-4 py-2 rounded-lg bg-transparent text-[#cefbe3] hover:bg-[#cefbe3]/10 transition-all border border-[#cefbe3]/20">
+                            Code
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    
-    
-    <section class="contact bg-gradient-to-r from-[#26533e] to-[#4bb2d1] text-white" id="contact">
-        <div class="title pt-8">
-            <h1 class="text-center text-2xl sm:text-5xl font-extrabold uppercase">Contact Me</h1>
-        </div>
+    </div>
+</section>
 
-        <div class="sm:flex mx-4 sm:mx-8 md:mx-12 2xl:mx-44 sm:py-10 py-4">
-            <div class="flex-initial sm:w-[40%] mr-6 text-white">
-                <p class="lg:text-2xl text-lg">Let's talk opportunities! Reach out through my contact form, and let's explore how 
-                    my skills can contribute to your team. Excited to connect and discuss potential 
-                    collaborations!
+    <section class="contact w-full flex flex-wrap justify-center items-center py-16 bg-gradient-to-br from-[#1a3a2e] to-[#2a6d8a]" id="contact">
+        <div class="w-full">
+            <div class="title mb-12 mx-4 sm:mx-8 md:mx-12 2xl:mx-44">
+                <h1 class="text-center text-3xl sm:text-5xl font-extrabold uppercase section-title">
+                    Get In Touch
+                </h1>
+                <p class="text-sm sm:text-base text-white/80 text-center max-w-3xl mx-auto mt-4">
+                    Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
                 </p>
-                <div class="flex">
-                    <a href="https://www.facebook.com/karl.cabalquinto"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="./images/facebook.png" alt=""></a>
-                    <a href="https://mail.google.com"> <img class="w-7 sm:w-9 md:w-11 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="./images/gmail3.png" alt=""></a>
-                    <a href="https://www.linkedin.com/in/karl-cabalquinto-21439929a/"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="./images/linkedIn.png" alt=""></a>
-                    <a href="https://github.com/pingpongrammer"><img class="w-6 sm:w-8 md:w-10 m-1 rounded-md cursor-pointer duration-300 transform hover:scale-110" src="./images/github.png" alt=""></a>
-                </div>  
             </div>
-            <div class="flex-1 sm:ml-3 sm:mt-0 mt-4 bg-green-950 bg-opacity-40 shadow-lg p-4 rounded-lg text-white">
-                <p class="text-center text-xl m-2">Message me here..</p>
-                <div>
-                    <label for="Name">Name</label>
-                    <input class="w-full py-2 px-3 text-sm rounded-md" type="text" placeholder="Your Name">
+
+            <div class="sm:flex mx-4 sm:mx-8 md:mx-12 2xl:mx-44 sm:py-10 py-4 gap-8">
+                <div class="flex-initial sm:w-[40%] text-white">
+                    <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-[#cefbe3]">Let's Connect!</h2>
+                    <p class="lg:text-lg text-base mb-8 leading-relaxed text-white/90">
+                        I'm currently looking for new opportunities and would love to hear from you. 
+                        Whether you have a question or just want to say hi, I'll do my best to get back to you!
+                    </p>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-envelope text-xl text-[#cefbe3]"></i>
+                            <span>karlcabalquinto07@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-phone-alt text-xl text-[#cefbe3]"></i>
+                            <span>09776162392</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-map-marker-alt text-xl text-[#cefbe3]"></i>
+                            <span>Baao, Camarines Sur, Philippines</span>
+                        </div>
+                    </div>
+                    <div class="flex mt-8 gap-4">
+                        <a href="https://www.facebook.com/karl.cabalquinto" class="social-icon">
+                            <img class="w-8 sm:w-10 rounded-md" src="./images/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://mail.google.com" class="social-icon">
+                            <img class="w-9 sm:w-11 rounded-md" src="./images/gmail3.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/karl-cabalquinto-21439929a/" class="social-icon">
+                            <img class="w-8 sm:w-10 rounded-md" src="./images/linkedIn.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/pingpongrammer" class="social-icon">
+                            <img class="w-8 sm:w-10 rounded-md" src="./images/github.png" alt="GitHub">
+                        </a>
+                    </div>  
                 </div>
-                
-                <div class="mt-2">
-                    <label for="Email" class="mb-1">Email</label>
-                    <input class="w-full py-2 px-3 text-sm rounded-md" type="text" placeholder="Your Email">
+                <div class="flex-1 sm:ml-3 sm:mt-0 mt-12 bg-[#0d1f18]/60 shadow-lg p-6 sm:p-8 rounded-xl border border-[#cefbe3]/20">
+                    <h3 class="text-center text-xl sm:text-2xl mb-6 font-semibold text-[#cefbe3]">Send me a message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Your Name</label>
+                            <input type="text" id="name" class="contact-input w-full py-3 px-4 rounded-lg text-white placeholder-white/50" placeholder="John Doe" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">Your Email</label>
+                            <input type="email" id="email" class="contact-input w-full py-3 px-4 rounded-lg text-white placeholder-white/50" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
+                            <input type="text" id="subject" class="contact-input w-full py-3 px-4 rounded-lg text-white placeholder-white/50" placeholder="Let me know how I can help you">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium">Your Message</label>
+                            <textarea id="message" rows="5" class="contact-input w-full py-3 px-4 rounded-lg text-white placeholder-white/50" placeholder="Your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full py-3 px-6 rounded-lg font-medium text-white mt-6">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
-                <div class="mt-2">
-                    <label for="Email" class="block mb-1">Message</label>
-                    <textarea class="w-full py-1 px-3 text-sm rounded-md" name="" id="" rows="5" placeholder="Your Message"></textarea>
-                </div>
-                <button class="block mx-auto bg-[#18506b] py-2 px-8 text-base text-black rounded-md hover:scale-110 duration-300 mt-2 ">Send</button>
             </div>
         </div>
     </section>
-    <footer>
-        <div class="w-full py-4">
-            <p class="text-center text-xs sm:text-sm text-white
-            ">@2023 Pingpongrammer. All Rights Reserved. </p>
+    
+    <footer class="border-t border-[rgba(206,251,227,0.2)]">
+        <div class="w-full py-6">
+            <p class="text-center text-xs sm:text-sm text-white/70">
+                &copy; 2023 Karl Cabalquinto. All Rights Reserved.
+            </p>
         </div>
     </footer>
 
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            if (!isMenuOpen) {
+                toggleMenu();
+            }
         }
+
+        let isMenuOpen = true;
+        
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (isMenuOpen) {
+                // Hide the menu
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                // Show the menu
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+            
+            isMenuOpen = !isMenuOpen;
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scroll');
+            } else {
+                header.classList.remove('header-scroll');
+            }
+        });
+
+        // Initialize animations when elements come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animatedElements = entry.target.querySelectorAll('.image-container, .text-container, .skill-card, .project-card');
+                        
+                        animatedElements.forEach((element, index) => {
+                            setTimeout(() => {
+                                element.classList.add('animate-fade-in');
+                            }, index * 100);
+                        });
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         var typed = new Typed('#typed-output', {
-          strings: ["Aspiring Web Developer"],
-          typeSpeed: 80, // Speed of typing
-          backSpeed: 35, // Speed of backspacing (if needed)
-          loop: true // Set to true if you want it to keep repeating
+          strings: ["Aspiring Web Developer", "Laravel Developer", "Frontend Enthusiast"],
+          typeSpeed: 50,
+          backSpeed: 30,
+          loop: true,
+          backDelay: 1500
         });
-      </script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-    let isMenuOpen = true;
-    
-    function toggleMenu() {
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        
-        if (isMenuOpen) {
-            // Hide the menu
-            menu.classList.add('hidden');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        } else {
-            // Show the menu
-            menu.classList.remove('hidden');
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        }
-        
-        isMenuOpen = !isMenuOpen;
-    }
     </script>
 
 <script>
-    // Select the section to observe
-    const section = document.getElementById('home');
-    const imageContainer = document.querySelector('.image-container');
-    const textContainer = document.querySelector('.text-container');
-
-    // Create an Intersection Observer instance
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add animation classes when the section is visible
-                imageContainer.classList.add('animate-slide-in-right');
-                textContainer.classList.add('animate-fade-in');
-            } else {
-                // Remove the classes when the section is not visible so it can trigger again
-                imageContainer.classList.remove('animate-slide-in-right');
-                textContainer.classList.remove('animate-fade-in');
-            }
-        });
-    });
-
-    // Observe the section
-    observer.observe(section);
-</script>
+    // Previous JavaScript remains the same
     
-    <!-- Make sure FontAwesome is loaded for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    // Modal functions
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    }
+    
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+    
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target.className === "modal") {
+            event.target.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+    
+    // Close modal with Escape key
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.key === "Escape") {
+            const modals = document.getElementsByClassName("modal");
+            for (let i = 0; i < modals.length; i++) {
+                if (modals[i].style.display === "block") {
+                    modals[i].style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            }
+        }
+    };
+</script>
+
+<script>
+    // Lightbox functionality
+    function openLightbox(imgElement) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-image');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        
+        lightboxImg.src = imgElement.src;
+        lightboxCaption.textContent = imgElement.alt;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Close lightbox when clicking outside the image
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+    
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !document.getElementById('lightbox').classList.contains('hidden')) {
+            closeLightbox();
+        }
+    });
+    
+    // Navigation between images in lightbox
+    document.addEventListener('keydown', function(e) {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox.classList.contains('hidden')) return;
+        
+        const currentImg = document.getElementById('lightbox-image');
+        const gallery = currentImg.closest('.modal-content')?.querySelector('.project-gallery');
+        if (!gallery) return;
+        
+        const images = Array.from(gallery.querySelectorAll('.gallery-image'));
+        const currentIndex = images.findIndex(img => img.src === currentImg.src);
+        
+        if (e.key === 'ArrowRight' && currentIndex < images.length - 1) {
+            currentImg.src = images[currentIndex + 1].src;
+            document.getElementById('lightbox-caption').textContent = images[currentIndex + 1].alt;
+        }
+        
+        if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            currentImg.src = images[currentIndex - 1].src;
+            document.getElementById('lightbox-caption').textContent = images[currentIndex - 1].alt;
+        }
+    });
+</script>
+
+
+<script>
+    // Lightbox functionality
+    function openLightbox(imgElement) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-image');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        
+        lightboxImg.src = imgElement.src;
+        lightboxCaption.textContent = imgElement.alt;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Close lightbox when clicking outside the image
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+    
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !document.getElementById('lightbox').classList.contains('hidden')) {
+            closeLightbox();
+        }
+    });
+    
+    // Navigation between images in lightbox
+    document.addEventListener('keydown', function(e) {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox.classList.contains('hidden')) return;
+        
+        const currentImg = document.getElementById('lightbox-image');
+        const gallery = currentImg.closest('.modal-content')?.querySelector('.project-gallery');
+        if (!gallery) return;
+        
+        const images = Array.from(gallery.querySelectorAll('.gallery-image'));
+        const currentIndex = images.findIndex(img => img.src === currentImg.src);
+        
+        if (e.key === 'ArrowRight' && currentIndex < images.length - 1) {
+            currentImg.src = images[currentIndex + 1].src;
+            document.getElementById('lightbox-caption').textContent = images[currentIndex + 1].alt;
+        }
+        
+        if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            currentImg.src = images[currentIndex - 1].src;
+            document.getElementById('lightbox-caption').textContent = images[currentIndex - 1].alt;
+        }
+    });
+</script>
 </body>
 </html>
