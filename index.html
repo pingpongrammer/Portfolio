@@ -482,8 +482,10 @@
                         <div class="flex flex-wrap gap-2 text-black">
                             <!-- Tech tags remain the same -->
                         </div>
-                        <h3 class="xl:text-xl sm:text-lg text-base font-bold my-3 text-[#cefbe3]">Barangay Profiling System</h3>
-                        <p class="text-sm text-white/80 mb-4">A comprehensive system for managing barangay resident records with secure data handling.</p>
+                        <h3 class="xl:text-xl sm:text-lg text-base font-bold my-3 text-[#cefbe3]">Barangay Profiling and Record Keeping System</h3>
+                        <p class="text-sm text-white/80 mb-4">
+                            A comprehensive barangay profiling and record-keeping system designed for secure, organized, and efficient management of resident information.
+                        </p>                        
                         <div class="flex gap-3">
                             <button onclick="openModal('modal1')" class="bg-slate-400/90 hover:bg-slate-400 px-4 py-2 rounded-lg text-sm font-medium transition-all">Details</button>
                             <a href="https://wbrprks.pingpongrammer.com/" target="_blank" class="bg-[#18506b] hover:bg-[#1a3a2e] px-4 py-2 rounded-lg text-sm font-medium transition-all">View Website</a>
@@ -565,14 +567,15 @@
             
             <div class="project-features">
                 <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Key Features</h3>
-                <ul>
+                <ul class="list-disc pl-5 text-white/90">
                     <li>Secure resident registration and profile management</li>
-                    <li>Document request and tracking system</li>
+                    <li>Document request, approval, and tracking system</li>
                     <li>Automated report generation for barangay officials</li>
-                    <li>Role-based access control for different user types</li>
-                    <li>Data visualization dashboard for statistics</li>
-                    <li>Responsive design for mobile access</li>
-                </ul>
+                    <li>Role-based access control for admins, staff, and officials</li>
+                    <li>Data visualization dashboard for real-time barangay statistics</li>
+                    <li>Integrated Twilio SMS notifications to inform residents of updates</li>
+                    <li>Responsive design optimized for both desktop and mobile devices</li>
+                </ul>                
             </div>
             
             <div class="project-challenges">
@@ -620,30 +623,31 @@
         <div class="project-description">
             <h3 class="text-xl font-semibold text-[#f9f871] mb-2">Project Overview</h3>
             <p class="text-white/90">
-                This e-commerce platform was developed as a full-stack solution for small businesses to sell products online. 
-                It includes all essential e-commerce features while maintaining a clean, user-friendly interface that focuses 
-                on conversion optimization.
+                SansLechon is a full-stack e-commerce platform designed for selling traditional Filipino lechon and party food packages online. 
+                The platform allows users to browse offerings, place orders, and connect with partnered shops. 
+                Built with user convenience in mind, the system ensures a smooth online ordering experience for both customers and administrators.
             </p>
             
             <div class="project-features">
                 <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Key Features</h3>
-                <ul>
-                    <li>Product catalog with categories and filters</li>
-                    <li>User accounts with order history</li>
-                    <li>Shopping cart with real-time updates</li>
-                    <li>Secure checkout process with multiple payment options</li>
-                    <li>Admin dashboard for inventory management</li>
-                    <li>Product search with auto-suggestions</li>
-                    <li>Responsive design optimized for all devices</li>
+                <ul class="list-disc pl-5 text-white/90">
+                    <li>Dynamic product listings for lechon, bilao, and cakes</li>
+                    <li>Shop-wise cart system with quantity controls and real-time updates</li>
+                    <li>Email-based authentication with optional OTP login</li>
+                    <li>Partner shop integration and individual shop management</li>
+                    <li>Image storage via Laravel’s storage linking for product galleries</li>
+                    <li>Responsive design tailored for mobile-first customers</li>
+                    <li>Introductory freebies and promotions based on cart contents</li>
                 </ul>
             </div>
             
             <div class="project-challenges">
                 <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Technical Highlights</h3>
                 <p class="text-white/90">
-                    The project leveraged Laravel Livewire for dynamic interfaces without writing extensive JavaScript. 
-                    I implemented a custom inventory management system that prevents overselling and developed a caching 
-                    strategy to optimize performance during high traffic periods.
+                    The platform was built using Laravel and Livewire to deliver a highly interactive UI with minimal JavaScript. 
+                    I implemented modular cart logic to handle multiple shops in a single checkout session, added a secure 
+                    image upload system using Laravel’s file storage, and crafted dynamic sliders for showcasing shop-specific 
+                    products. Performance optimization was also achieved through caching and eager loading techniques.
                 </p>
             </div>
         </div>
@@ -678,35 +682,36 @@
         <div class="project-description">
             <h3 class="text-xl font-semibold text-[#f9f871] mb-2">Project Overview</h3>
             <p class="text-white/90">
-                The San's Lechon Affiliate System is a comprehensive platform designed to manage and track affiliate marketing 
-                activities. The system features a user-friendly dashboard with performance analytics, referral link generation, 
-                QR code sharing, and commission tracking. Built with a mobile-first approach, it empowers affiliates to 
-                promote products effectively while providing administrators with valuable insights.
+                The <strong>San's Lechon Affiliate System</strong> is a web-based platform designed to empower individuals to earn by promoting our lechon offerings and partner shop products online. 
+                Affiliates get access to their own dashboards, trackable referral links, QR codes for offline promotion, and commission summaries. 
+                Designed with a mobile-first approach, the system ensures seamless affiliate engagement and admin-level control over performance and payouts.
             </p>
-            
+        
             <div class="project-features">
                 <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Key Features</h3>
-                <ul>
-                    <li>Interactive dashboard with real-time performance metrics</li>
-                    <li>Custom referral link generator with QR code functionality</li>
-                    <li>One-click copy feature for easy link sharing</li>
-                    <li>Social media integration for seamless promotion</li>
-                    <li>Secure registration and login system</li>
-                    <li>Responsive design that works across all devices</li>
-                    <li>Commission tracking and payout history</li>
+                <ul class="list-disc pl-5 text-white/90">
+                    <li>Affiliate dashboard with real-time referral and commission stats</li>
+                    <li>Custom referral link generator with auto-generated QR codes</li>
+                    <li>One-click copy-to-clipboard functionality for easy sharing</li>
+                    <li>Social media sharing integration (Facebook, Messenger, etc.)</li>
+                    <li>Secure registration/login system with OTP email support</li>
+                    <li>Mobile-responsive UI for on-the-go tracking and link sharing</li>
+                    <li>Admin panel to manage affiliate users, commissions, and payouts</li>
                 </ul>
             </div>
-            
+        
             <div class="project-challenges">
                 <h3 class="text-xl font-semibold text-[#f9f871] mb-2 mt-4">Technical Implementation</h3>
                 <p class="text-white/90">
-                    The system presented unique challenges in implementing secure referral tracking while maintaining 
-                    excellent performance. I leveraged JavaScript's Clipboard API for the copy functionality and 
-                    integrated QRCode.js for dynamic code generation. The dashboard uses chart.js for data visualization, 
-                    and all components were built with accessibility in mind, following WCAG guidelines.
+                    The affiliate system was built using Laravel and Livewire for real-time interactivity without page reloads. 
+                    Clipboard API was used for seamless link copying, and QRCode.js was integrated to generate scannable codes dynamically. 
+                    Chart.js powers the performance visualization in the affiliate dashboard. Referral tracking was implemented using unique 
+                    user-based tokens, with secured route bindings and middleware to avoid abuse. The entire platform follows modern 
+                    web accessibility standards (WCAG), and responsiveness was fine-tuned using Tailwind CSS.
                 </p>
             </div>
         </div>
+        
         
         <div class="modal-links">
             <a href="#" class="live-link">View Live Demo</a>
@@ -788,7 +793,7 @@
             </div>
 
             <!-- Mini Project 3 -->
-            <div class="mini-project-card bg-[#0d1f18]/60 rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all hover:shadow-lg hover:shadow-[#cefbe3]/10">
+            <!-- <div class="mini-project-card bg-[#0d1f18]/60 rounded-xl overflow-hidden border border-[#cefbe3]/20 hover:border-[#cefbe3]/40 transition-all hover:shadow-lg hover:shadow-[#cefbe3]/10">
                 <div class="aspect-video bg-[#1a3a2e] flex items-center justify-center">
                     <img src="./images/project1.png" alt="Recipe Finder" class="w-full h-full object-cover">
                 </div>
@@ -804,12 +809,12 @@
                         <a href="#" class="text-sm px-4 py-2 rounded-lg bg-[#cefbe3]/10 text-[#cefbe3] hover:bg-[#cefbe3] hover:text-[#1a3a2e] transition-all border border-[#cefbe3]/20">
                             Live Demo
                         </a>
-                        <!-- <a href="#" class="text-sm px-4 py-2 rounded-lg bg-transparent text-[#cefbe3] hover:bg-[#cefbe3]/10 transition-all border border-[#cefbe3]/20">
+                        <a href="#" class="text-sm px-4 py-2 rounded-lg bg-transparent text-[#cefbe3] hover:bg-[#cefbe3]/10 transition-all border border-[#cefbe3]/20">
                             Code
-                        </a> -->
+                        </a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
